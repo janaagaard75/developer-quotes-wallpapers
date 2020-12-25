@@ -1,5 +1,8 @@
 {
-  "cSpell.words": ["Aagaard"],
+  "cSpell.words": [
+    "Aagaard",
+    "Sandi"
+  ],
   "editor.codeActionsOnSave": {
     "source.organizeImports": true
   },
