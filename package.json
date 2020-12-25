@@ -6,6 +6,10 @@
   "author": "Jan Aagaard <jan@aagaard.net>",
   "license": "MIT",
   "private": true,
+  "engines": {
+    "node": ">=12",
+    "yarn": ">=1.22"
+  },
   "scripts": {
     "start": "ts-node start.ts"
   },
