@@ -65,6 +65,18 @@ const getHtml = async (template: string, quote: Quote): Promise<string> => {
   return html;
 };
 
+const getScreenshotFilePath = (
+  wallpapersFolderName: string,
+  quoteIndex: number
+): string => {
+  const screenshotFilePath = path.join(
+    __dirname,
+    wallpapersFolderName,
+    `quote${quoteIndex}.png`
+  );
+  return screenshotFilePath;
+};
+
 const main = async () => {
   const wallpapersFolderName = "wallpapers";
   await fs.rmdir(wallpapersFolderName, { recursive: true });
@@ -78,13 +90,9 @@ const main = async () => {
     for (let i = 0; i < quotes.length; i++) {
       const html = await getHtml(template, quotes[i]);
       await page.setContent(html);
-
-      const screenshotFilePath = path.join(
-        __dirname,
-        wallpapersFolderName,
-        `quote${i}.png`
-      );
-      await page.screenshot({ path: screenshotFilePath });
+      await page.screenshot({
+        path: getScreenshotFilePath(wallpapersFolderName, i),
+      });
     }
   } finally {
     await browser.close();
