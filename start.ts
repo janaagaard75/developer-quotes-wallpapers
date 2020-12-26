@@ -5,7 +5,7 @@ import puppeteer, { Browser, Page } from "puppeteer";
 interface Quote {
   author: string;
   text: string;
-  year: number;
+  year?: number;
 }
 
 const quotes: Array<Quote> = [
@@ -20,15 +20,27 @@ const quotes: Array<Quote> = [
     year: 1999,
   },
   {
-    author: "?",
+    author: "Brian W. Kernighan",
     text:
-      "Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.",
-    year: 1000,
+      "Everyone knows that debugging is twice as hard as writing a program in the first place. So if you're as clever as you can be when you write it, how will you ever debug it?",
   },
   {
     author: "Josh Bloch",
     text: "APIs should be easy to use and hard to misuse.",
-    year: 1000,
+  },
+  {
+    author: "Tony Hoare",
+    text:
+      "There are two ways of constructing a software design: One way is to make it so simple that there are obviously no deficiencies, and the other way is to make it so complicated that there are no obvious deficiencies. The first method is far more difficult.",
+  },
+  {
+    author: "Linus Torvalds",
+    text:
+      "The difference between a bad programmer and a good one is whether he considers his code or his data structures more important. Bad programmers worry about the code. Good programmers worry about data structures and their relationships.",
+  },
+  {
+    author: "Brian W. Kernighan",
+    text: "Don’t comment bad code—rewrite it.",
   },
 ];
 
@@ -44,10 +56,11 @@ const getBrowserPage = async (browser: Browser): Promise<Page> => {
 
 const getHtml = async (quote: Quote): Promise<string> => {
   const template = await fs.readFile("template.html", { encoding: "utf-8" });
-  const html = template
+  const commaYear = quote.year === undefined ? "" : `, ${quote.year}`;
+  let html = template
     .replace("{{author}}", quote.author)
     .replace("{{text}}", quote.text)
-    .replace("{{year}}", quote.year.toString());
+    .replace("{{commaYear}}", commaYear);
   return html;
 };
 
