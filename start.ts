@@ -1,12 +1,22 @@
 import fs from "fs";
 import path from "path";
-import puppeteer from "puppeteer";
+import puppeteer, { Browser, Page } from "puppeteer";
 
 interface Quote {
   author: string;
   text: string;
   year: number;
 }
+
+const getBrowserPage = async (browser: Browser): Promise<Page> => {
+  const page = await browser.newPage();
+  await page.setViewport({
+    deviceScaleFactor: 1,
+    height: 1440,
+    width: 2560,
+  });
+  return page;
+};
 
 const getHtml = (quote: Quote): string => {
   const template = fs.readFileSync("template.html", { encoding: "utf-8" });
@@ -20,12 +30,7 @@ const getHtml = (quote: Quote): string => {
 const main = async () => {
   const browser = await puppeteer.launch({ headless: true });
   try {
-    const page = await browser.newPage();
-    await page.setViewport({
-      deviceScaleFactor: 1,
-      height: 1440,
-      width: 2560,
-    });
+    const page = await getBrowserPage(browser);
 
     const html = getHtml({
       author: "Sandi Metz",
