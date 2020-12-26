@@ -1,7 +1,8 @@
 {
   "cSpell.words": [
     "Aagaard",
-    "Sandi"
+    "Sandi",
+    "preconnect"
   ],
   "editor.codeActionsOnSave": {
     "source.organizeImports": true
