@@ -21,6 +21,11 @@ const getHtml = async (template: string, quote: Quote): Promise<string> => {
   return html;
 };
 
+const padNumber = (value: number, size: number): string => {
+  var paddingStringValue = "000000000" + value;
+  return paddingStringValue.substr(-size);
+};
+
 const getScreenshotFilePath = (
   wallpapersFolderName: string,
   quoteIndex: number
@@ -28,7 +33,7 @@ const getScreenshotFilePath = (
   const screenshotFilePath = path.join(
     __dirname,
     wallpapersFolderName,
-    `quote${quoteIndex}.png`
+    `quote-${padNumber(quoteIndex + 1, 2)}.png`
   );
   return screenshotFilePath;
 };
