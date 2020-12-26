@@ -1,4 +1,4 @@
-import fs from "fs";
+import { promises as fs } from "fs";
 import path from "path";
 import puppeteer, { Browser, Page } from "puppeteer";
 
@@ -18,8 +18,8 @@ const getBrowserPage = async (browser: Browser): Promise<Page> => {
   return page;
 };
 
-const getHtml = (quote: Quote): string => {
-  const template = fs.readFileSync("template.html", { encoding: "utf-8" });
+const getHtml = async (quote: Quote): Promise<string> => {
+  const template = await fs.readFile("template.html", { encoding: "utf-8" });
   const html = template
     .replace("{{author}}", quote.author)
     .replace("{{text}}", quote.text)
@@ -28,18 +28,26 @@ const getHtml = (quote: Quote): string => {
 };
 
 const main = async () => {
+  const wallpapersFolderName = "wallpapers";
+  await fs.rmdir(wallpapersFolderName, { recursive: true });
+  await fs.mkdir(wallpapersFolderName);
+
   const browser = await puppeteer.launch({ headless: true });
   try {
     const page = await getBrowserPage(browser);
 
-    const html = getHtml({
+    const html = await getHtml({
       author: "Sandi Metz",
       text: "Duplication is far cheaper than the wrong abstraction.",
       year: 2014,
     });
     await page.setContent(html);
 
-    const screenshotFilePath = path.join(__dirname, "demo.png");
+    const screenshotFilePath = path.join(
+      __dirname,
+      wallpapersFolderName,
+      "quote.png"
+    );
     await page.screenshot({ path: screenshotFilePath });
   } finally {
     await browser.close();
