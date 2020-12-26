@@ -1,6 +1,7 @@
 export interface Quote {
-  author: string;
+  title?: string;
   text: string;
+  author: string;
 }
 
 export const quotes: Array<Quote> = [
@@ -36,6 +37,7 @@ export const quotes: Array<Quote> = [
     author: "Josh Bloch",
   },
   {
+    title: "Linus' law",
     text: "Given enough eyeballs, all bugs are shallow.",
     author: "Linus Torvalds",
   },
@@ -45,6 +47,7 @@ export const quotes: Array<Quote> = [
     author: "Linus Torvalds",
   },
   {
+    title: "Conway's Law",
     text:
       "Organizations which design systems are constrained to produce designs which are copies of the communication structures of these organizations.",
     author: "Melvin Conway",

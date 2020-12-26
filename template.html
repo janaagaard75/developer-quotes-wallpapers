@@ -26,19 +26,24 @@
         width: 70%;
       }
 
+      .title {
+        font-size: 3rem;
+      }
+
       .quote {
         font-size: 5rem;
         text-align: right;
       }
 
       .author {
-        font-size: 2em;
+        font-size: 2rem;
         text-align: right;
       }
     </style>
   </head>
   <body>
     <div class="centered">
+      <h2 class="title">{{title}}</h2>
       <h1 class="quote">&ldquo;{{text}}&rdquo;</h1>
       <p class="author">{{author}}</p>
     </div>
