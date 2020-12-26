@@ -1,19 +1,16 @@
 export interface Quote {
   author: string;
   text: string;
-  year?: number;
 }
 
 export const quotes: Array<Quote> = [
   {
     author: "Sandi Metz",
     text: "Duplication is far cheaper than the wrong abstraction.",
-    year: 2014,
   },
   {
     author: "Linus Torvalds",
     text: "Given enough eyeballs, all bugs are shallow.",
-    year: 1999,
   },
   {
     author: "Brian W. Kernighan",

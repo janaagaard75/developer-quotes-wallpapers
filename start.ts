@@ -14,11 +14,9 @@ const getBrowserPage = async (browser: Browser): Promise<Page> => {
 };
 
 const getHtml = async (template: string, quote: Quote): Promise<string> => {
-  const commaYear = quote.year === undefined ? "" : `, ${quote.year}`;
   let html = template
     .replace("{{author}}", quote.author)
-    .replace("{{text}}", quote.text)
-    .replace("{{commaYear}}", commaYear);
+    .replace("{{text}}", quote.text);
   return html;
 };
 
