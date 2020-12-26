@@ -22,8 +22,9 @@ const getHtml = async (template: string, quote: Quote): Promise<string> => {
 };
 
 const padNumber = (value: number, size: number): string => {
-  var paddingStringValue = "000000000" + value;
-  return paddingStringValue.substr(-size);
+  const paddedValue = "000000000" + value;
+  const paddedAndTrimmedValue = paddedValue.substr(-size);
+  return paddedAndTrimmedValue;
 };
 
 const getScreenshotFilePath = (
