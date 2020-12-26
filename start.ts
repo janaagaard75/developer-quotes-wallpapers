@@ -54,8 +54,7 @@ const getBrowserPage = async (browser: Browser): Promise<Page> => {
   return page;
 };
 
-const getHtml = async (quote: Quote): Promise<string> => {
-  const template = await fs.readFile("template.html", { encoding: "utf-8" });
+const getHtml = async (template: string, quote: Quote): Promise<string> => {
   const commaYear = quote.year === undefined ? "" : `, ${quote.year}`;
   let html = template
     .replace("{{author}}", quote.author)
@@ -70,11 +69,12 @@ const main = async () => {
   await fs.mkdir(wallpapersFolderName);
 
   const browser = await puppeteer.launch({ headless: true });
+  const template = await fs.readFile("template.html", { encoding: "utf-8" });
   try {
     const page = await getBrowserPage(browser);
 
     for (let i = 0; i < quotes.length; i++) {
-      const html = await getHtml(quotes[i]);
+      const html = await getHtml(template, quotes[i]);
       await page.setContent(html);
 
       const screenshotFilePath = path.join(
