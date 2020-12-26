@@ -8,8 +8,8 @@ const main = async () => {
     const page = await browser.newPage();
     await page.setViewport({
       deviceScaleFactor: 1,
-      height: 2560,
-      width: 1440,
+      height: 1440,
+      width: 2560,
     });
     const demoFileName = "demo.html";
     const demoFileUrl = fileUrl(demoFileName);
