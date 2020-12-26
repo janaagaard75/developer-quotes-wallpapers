@@ -8,6 +8,30 @@ interface Quote {
   year: number;
 }
 
+const quotes: Array<Quote> = [
+  {
+    author: "Sandi Metz",
+    text: "Duplication is far cheaper than the wrong abstraction.",
+    year: 2014,
+  },
+  {
+    author: "Linus Torvalds",
+    text: "Given enough eyeballs, all bugs are shallow.",
+    year: 1999,
+  },
+  {
+    author: "?",
+    text:
+      "Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.",
+    year: 1000,
+  },
+  {
+    author: "Josh Bloch",
+    text: "APIs should be easy to use and hard to misuse.",
+    year: 1000,
+  },
+];
+
 const getBrowserPage = async (browser: Browser): Promise<Page> => {
   const page = await browser.newPage();
   await page.setViewport({
@@ -36,19 +60,17 @@ const main = async () => {
   try {
     const page = await getBrowserPage(browser);
 
-    const html = await getHtml({
-      author: "Sandi Metz",
-      text: "Duplication is far cheaper than the wrong abstraction.",
-      year: 2014,
-    });
-    await page.setContent(html);
+    for (let i = 0; i < quotes.length; i++) {
+      const html = await getHtml(quotes[i]);
+      await page.setContent(html);
 
-    const screenshotFilePath = path.join(
-      __dirname,
-      wallpapersFolderName,
-      "quote.png"
-    );
-    await page.screenshot({ path: screenshotFilePath });
+      const screenshotFilePath = path.join(
+        __dirname,
+        wallpapersFolderName,
+        `quote${i}.png`
+      );
+      await page.screenshot({ path: screenshotFilePath });
+    }
   } finally {
     await browser.close();
   }
