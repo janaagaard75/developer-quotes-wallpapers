@@ -2,4 +2,4 @@
 
 Generate wallpapers with software development quotes.
 
-Run `yarn start` to generate `demo.png`.
+Run `yarn start` to generate wallpapers into a `wallpapers` folder.
