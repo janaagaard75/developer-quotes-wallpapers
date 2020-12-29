@@ -11,7 +11,7 @@
     "yarn": ">=1.22"
   },
   "scripts": {
-    "start": "yarn install && ts-node start.ts"
+    "start": "yarn install && ts-node src/start.ts"
   },
   "dependencies": {
     "@types/file-url": "^3.0.2",

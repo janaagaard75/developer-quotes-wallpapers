@@ -33,6 +33,7 @@ const getScreenshotFilePath = (
 ): string => {
   const screenshotFilePath = path.join(
     __dirname,
+    "..",
     wallpapersFolderName,
     `quote-${padNumber(quoteIndex + 1, 2)}.png`
   );
@@ -45,7 +46,9 @@ const main = async () => {
   await fs.mkdir(wallpapersFolderName);
 
   const browser = await puppeteer.launch({ headless: true });
-  const template = await fs.readFile("template.html", { encoding: "utf-8" });
+  const template = await fs.readFile("src/template.html", {
+    encoding: "utf-8",
+  });
   try {
     const page = await getBrowserPage(browser);
     for (let i = 0; i < quotes.length; i++) {
