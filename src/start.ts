@@ -54,9 +54,8 @@ const main = async () => {
     for (let i = 0; i < quotes.length; i++) {
       const html = await getHtml(template, quotes[i]);
       await page.setContent(html);
-      await page.screenshot({
-        path: getScreenshotFilePath(wallpapersFolderName, i),
-      });
+      const screenshotFilePath = getScreenshotFilePath(wallpapersFolderName, i);
+      await page.screenshot({ path: screenshotFilePath });
     }
   } finally {
     await browser.close();
