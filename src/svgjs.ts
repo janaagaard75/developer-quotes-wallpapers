@@ -1,4 +1,5 @@
 import { SVG } from "@svgdotjs/svg.js";
+import fs from "fs";
 const { createSVGWindow } = require("svgdom");
 const { registerWindow } = require("@svgdotjs/svg.js");
 
@@ -61,4 +62,4 @@ for (let i = 0; i < screenWidth / x; i++) {
   }
 }
 
-console.log(svgCanvas.svg());
+fs.writeFileSync("wallpapers/background.svg", svgCanvas.svg());
