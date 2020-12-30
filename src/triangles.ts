@@ -2,8 +2,7 @@ import * as d3 from "d3";
 import fs from "fs";
 import jsdom from "jsdom";
 
-const { JSDOM } = jsdom;
-const dom = new JSDOM(`<!DOCTYPE html><body></body>`);
+const dom = new jsdom.JSDOM(`<!DOCTYPE html><body></body>`);
 
 let body = d3.select(dom.window.document.querySelector("body"));
 let svg = body
