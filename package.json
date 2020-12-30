@@ -12,7 +12,8 @@
   },
   "scripts": {
     "start": "yarn install && ts-node src/start.ts",
-    "triangles": "yarn install && ts-node src/triangles.ts"
+    "triangles": "yarn install && ts-node src/triangles.ts",
+    "svgjs": "yarn install && ts-node src/svgjs.ts"
   },
   "dependencies": {
     "@types/d3": "6.2.0",
@@ -21,6 +22,8 @@
     "d3": "6.3.1",
     "jsdom": "16.4.0",
     "puppeteer": "^5.5.0",
+    "svg.js": "2.7.1",
+    "svgdom": "0.1.8",
     "ts-node": "^9.1.1",
     "typescript": "^4.1.3"
   }

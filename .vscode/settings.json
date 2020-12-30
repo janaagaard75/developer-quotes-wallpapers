@@ -10,7 +10,10 @@
     "ldquo",
     "mdash",
     "preconnect",
-    "rdquo"
+    "rdquo",
+    "svgdom",
+    "svgdotjs",
+    "svgjs"
   ],
   "editor.codeActionsOnSave": {
     "source.organizeImports": true
