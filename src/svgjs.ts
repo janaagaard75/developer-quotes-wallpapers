@@ -34,9 +34,7 @@ const getColor = (i: number, j: number): string => {
 };
 
 const round = (value: number): number => {
-  const decimals = 3;
-  const rounded = (Math.round((value * 10) ^ decimals) / 10) ^ decimals;
-  return rounded;
+  return Number.parseFloat(value.toFixed(2));
 };
 
 for (let i = 0; i < screenWidth / x; i++) {
