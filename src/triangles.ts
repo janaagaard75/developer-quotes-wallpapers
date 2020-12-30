@@ -19,4 +19,4 @@ svg
   .attr("height", 80)
   .style("fill", "orange");
 
-fs.writeFileSync("out.svg", body.html());
+fs.writeFileSync("wallpapers/out.svg", body.html());
