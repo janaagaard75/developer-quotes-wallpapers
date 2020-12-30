@@ -1,9 +1,11 @@
+import { SVG } from "@svgdotjs/svg.js";
 const { createSVGWindow } = require("svgdom");
-const svgWindow = createSVGWindow();
-const svgjs = require("svg.js");
-const SVG = svgjs(svgWindow);
+const { registerWindow } = require("@svgdotjs/svg.js");
 
-const svgCanvas = SVG(svgWindow.document.documentElement);
+const svgWindow = createSVGWindow();
+registerWindow(svgWindow, svgWindow.document);
+
+const svgCanvas = SVG(svgWindow.document.documentElement as SVGSVGElement);
 
 const screenWidth = 300;
 const screenHeight = 200;
