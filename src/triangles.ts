@@ -4,6 +4,10 @@ import jsdom from "jsdom";
 
 const screenWidth = 300;
 const screenHeight = 200;
+const size = 10;
+const strokeWidth = 0.5;
+const x = (size * Math.sqrt(3)) / 2;
+const y = size / 2;
 
 const getColor = (i: number, j: number): string => {
   const top = "#999";
@@ -37,21 +41,14 @@ svg
   .attr("height", 80)
   .style("fill", "orange");
 
-fs.writeFileSync("wallpapers/out.svg", body.html());
-
-/*
-const size = 10;
-const strokeWidth = 0.5;
-const x = (size * Math.sqrt(3)) / 2;
-const y = size / 2;
-
-
 for (let i = 0; i < screenWidth / x; i++) {
   for (let j = -1; j < screenHeight / y; j++) {
     if ((i + j) % 2 === 0) {
-      draw
-        .polygon(`0,0 ${x},${y} 0,${2 * y}`)
-        .move(i * x, j * y)
+      svg
+        .append("polygon")
+        .attr("points", [{ x: 0, y: 0 }])
+        //.polygon(`0,0 ${x},${y} 0,${2 * y}`)
+        //.move(i * x, j * y)
         .fill(getColor(i, j))
         .stroke({
           color: getColor(i, j),
@@ -69,4 +66,5 @@ for (let i = 0; i < screenWidth / x; i++) {
     }
   }
 }
-*/
+
+fs.writeFileSync("wallpapers/out.svg", body.html());
