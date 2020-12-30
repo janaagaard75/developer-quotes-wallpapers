@@ -217,13 +217,6 @@
     "@types/d3-transition" "*"
     "@types/d3-zoom" "*"
 
-"@types/file-url@^3.0.2":
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/@types/file-url/-/file-url-3.0.2.tgz#74d6d4578133c8814385a7420ea686c3ad3e2fe7"
-  integrity sha512-J/TUhtQjCG2I77BpXvRwUp+IZSuxub7gbrW/9/mprI5Hr9HvbdB+JXArkTJHJdqQlE351QVqxnl1KkayCgjUMw==
-  dependencies:
-    file-url "*"
-
 "@types/geojson@*":
   version "7946.0.7"
   resolved "https://registry.yarnpkg.com/@types/geojson/-/geojson-7946.0.7.tgz#c8fa532b60a0042219cdf173ca21a975ef0666ad"
@@ -837,11 +830,6 @@ fd-slicer@~1.1.0:
   integrity sha1-JcfInLH5B3+IkbvmHY85Dq4lbx4=
   dependencies:
     pend "~1.2.0"
-
-file-url@*, file-url@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/file-url/-/file-url-3.0.0.tgz#247a586a746ce9f7a8ed05560290968afc262a77"
-  integrity sha512-g872QGsHexznxkIAdK8UiZRe7SkE6kvylShU4Nsj8NvfvZag7S0QuQ4IgvPDkk75HxgjIVDwycFTDAgIiO4nDA==
 
 find-up@^4.0.0:
   version "4.1.0"
