@@ -3,20 +3,17 @@ import fs from "fs";
 const { createSVGWindow } = require("svgdom");
 const { registerWindow } = require("@svgdotjs/svg.js");
 
-const svgWindow = createSVGWindow();
-registerWindow(svgWindow, svgWindow.document);
-
-const svgCanvas = SVG(svgWindow.document.documentElement as SVGSVGElement);
-
 const screenWidth = 2560;
 const screenHeight = 1440;
-
-svgCanvas.size(screenWidth, screenHeight);
-
 const size = 15;
 const strokeWidth = 0.5;
 const x = (size * Math.sqrt(3)) / 2;
 const y = size / 2;
+
+const svgWindow = createSVGWindow();
+registerWindow(svgWindow, svgWindow.document);
+const svgCanvas = SVG(svgWindow.document.documentElement as SVGSVGElement);
+svgCanvas.size(screenWidth, screenHeight);
 
 const getColor = (i: number, j: number): string => {
   const top = "#333";

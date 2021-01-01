@@ -3,12 +3,16 @@ import path from "path";
 import puppeteer, { Browser, Page } from "puppeteer";
 import { Quote, quotes } from "./quotes";
 
+const screenWidth = 2560;
+const screenHeight = 1440;
+const wallpapersFolderName = "wallpapers";
+
 const getBrowserPage = async (browser: Browser): Promise<Page> => {
   const page = await browser.newPage();
   await page.setViewport({
     deviceScaleFactor: 1,
-    height: 1440,
-    width: 2560,
+    height: screenHeight,
+    width: screenWidth,
   });
   return page;
 };
