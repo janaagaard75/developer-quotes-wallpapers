@@ -40,6 +40,15 @@ const getScreenshotFilePath = (
   return screenshotFilePath;
 };
 
+const asyncForEach = async <T>(
+  array: Array<T>,
+  callback: (value: T, index: number, array: Array<T>) => Promise<void>
+) => {
+  for (let index = 0; index < array.length; index++) {
+    await callback(array[index], index, array);
+  }
+};
+
 const main = async () => {
   const wallpapersFolderName = "wallpapers";
   await fs.rmdir(wallpapersFolderName, { recursive: true });
@@ -51,12 +60,16 @@ const main = async () => {
   });
   try {
     const page = await getBrowserPage(browser);
-    for (let i = 0; i < quotes.length; i++) {
-      const html = await getHtml(template, quotes[i]);
+    // Can't use forEach with a async callback. https://codeburst.io/javascript-async-await-with-foreach-b6ba62bbf404
+    await asyncForEach(quotes, async (quote, quoteIndex) => {
+      const html = await getHtml(template, quote);
       await page.setContent(html);
-      const screenshotFilePath = getScreenshotFilePath(wallpapersFolderName, i);
+      const screenshotFilePath = getScreenshotFilePath(
+        wallpapersFolderName,
+        quoteIndex
+      );
       await page.screenshot({ path: screenshotFilePath });
-    }
+    });
   } finally {
     await browser.close();
   }
