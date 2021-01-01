@@ -1,14 +1,8 @@
 import { SVG } from "@svgdotjs/svg.js";
 import fs from "fs";
+import { screenHeight, screenWidth, strokeWidth, x, y } from "./settings";
 const { createSVGWindow } = require("svgdom");
 const { registerWindow } = require("@svgdotjs/svg.js");
-
-const screenWidth = 2560;
-const screenHeight = 1440;
-const size = 15;
-const strokeWidth = 0.5;
-const x = (size * Math.sqrt(3)) / 2;
-const y = size / 2;
 
 const svgWindow = createSVGWindow();
 registerWindow(svgWindow, svgWindow.document);

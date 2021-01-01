@@ -2,10 +2,7 @@ import { promises as fs } from "fs";
 import path from "path";
 import puppeteer, { Browser, Page } from "puppeteer";
 import { Quote, quotes } from "./quotes";
-
-const screenWidth = 2560;
-const screenHeight = 1440;
-const wallpapersFolderName = "wallpapers";
+import { screenHeight, screenWidth, wallpapersFolderName } from "./settings";
 
 const getBrowserPage = async (browser: Browser): Promise<Page> => {
   const page = await browser.newPage();

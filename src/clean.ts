@@ -1,6 +1,5 @@
 import { promises as fs } from "fs";
-
-const wallpapersFolderName = "wallpapers";
+import { wallpapersFolderName } from "./settings";
 
 const main = async () => {
   await fs.rmdir(wallpapersFolderName, { recursive: true });
