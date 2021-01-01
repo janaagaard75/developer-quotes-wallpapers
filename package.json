@@ -12,6 +12,7 @@
   },
   "scripts": {
     "background": "yarn install && ts-node src/background.ts",
+    "clean": "yarn install && ts-node src/clean.ts",
     "start": "yarn install && ts-node src/start.ts"
   },
   "dependencies": {

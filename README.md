@@ -2,8 +2,20 @@
 
 Generate wallpapers with software development quotes.
 
-Run `yarn background` to generate a `wallpapers/background.svg`.
+## Commands
 
-Run `yarn start` to generate wallpapers into a `wallpapers` folder.
+Remove all files in the `wallpapers` folder:
+
+    yarn clean
+
+Generate `background.svg`:
+
+    yarn background
+
+Generate wallpapers:
+
+    yarn start
+
+## Notes
 
 Grid work in progress: <https://stackblitz.com/edit/typescript-dscjbq?file=index.ts>
