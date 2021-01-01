@@ -14,7 +14,7 @@ Generate `background.svg`:
 
 Generate wallpapers:
 
-    yarn start
+    yarn wallpapers
 
 ## Notes
 

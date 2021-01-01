@@ -13,7 +13,7 @@
   "scripts": {
     "background": "yarn install && ts-node src/background.ts",
     "clean": "yarn install && ts-node src/clean.ts",
-    "start": "yarn install && ts-node src/start.ts"
+    "wallpapers": "yarn install && ts-node src/wallpapers.ts"
   },
   "dependencies": {
     "@svgdotjs/svg.js": "3.0.16",
