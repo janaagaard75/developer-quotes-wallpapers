@@ -1,8 +1,17 @@
 import { SVG } from "@svgdotjs/svg.js";
 import fs from "fs";
-import { screenHeight, screenWidth, strokeWidth, x, y } from "./settings";
+import {
+  screenHeight,
+  screenWidth,
+  strokeWidth,
+  wallpapersFolderName,
+  x,
+  y,
+} from "./settings";
 const { createSVGWindow } = require("svgdom");
 const { registerWindow } = require("@svgdotjs/svg.js");
+
+fs.mkdirSync(wallpapersFolderName, { recursive: true });
 
 const svgWindow = createSVGWindow();
 registerWindow(svgWindow, svgWindow.document);

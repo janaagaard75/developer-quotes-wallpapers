@@ -51,6 +51,8 @@ const asyncForEach = async <T>(
 };
 
 const main = async () => {
+  await fs.mkdir(wallpapersFolderName, { recursive: true });
+
   const browser = await puppeteer.launch({ headless: true });
   const template = await fs.readFile("src/template.html", {
     encoding: "utf-8",

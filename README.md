@@ -4,7 +4,7 @@ Generate wallpapers with software development quotes.
 
 ## Commands
 
-Remove all files in the `wallpapers` folder:
+Remove the `wallpapers` folder:
 
     yarn clean
 
