@@ -11,7 +11,7 @@
     "yarn": ">=1.22"
   },
   "scripts": {
-    "background": "yarn install && ts-node src/svgjs.ts",
+    "background": "yarn install && ts-node src/background.ts",
     "start": "yarn install && ts-node src/start.ts"
   },
   "dependencies": {
