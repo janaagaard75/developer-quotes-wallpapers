@@ -19,11 +19,18 @@
         color: white;
         display: flex;
         justify-content: center;
+        margin: 0;
         min-height: 100vh;
+      }
+
+      .background {
+        position: absolute;
+        z-index: 1;
       }
 
       .centered {
         width: 70%;
+        z-index: 2;
       }
 
       .title {
@@ -42,6 +49,12 @@
     </style>
   </head>
   <body>
+    <div class="background">
+      <img
+        src="../wallpapers/background.svg"
+        style="height: 1440px; width: 2560px"
+      />
+    </div>
     <div class="centered">
       <h2 class="title">{{title}}</h2>
       <h1 class="quote">&ldquo;{{text}}&rdquo;</h1>

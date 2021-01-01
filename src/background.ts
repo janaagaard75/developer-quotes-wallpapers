@@ -8,20 +8,20 @@ registerWindow(svgWindow, svgWindow.document);
 
 const svgCanvas = SVG(svgWindow.document.documentElement as SVGSVGElement);
 
-const screenWidth = 300;
-const screenHeight = 200;
+const screenWidth = 2560;
+const screenHeight = 1440;
 
 svgCanvas.size(screenWidth, screenHeight);
 
-const size = 10;
+const size = 15;
 const strokeWidth = 0.5;
 const x = (size * Math.sqrt(3)) / 2;
 const y = size / 2;
 
 const getColor = (i: number, j: number): string => {
-  const top = "#999";
-  const left = "#666";
-  const right = "#555";
+  const top = "#333";
+  const left = "#222";
+  const right = "#111";
 
   if (j % 3 === 0) {
     return top;
