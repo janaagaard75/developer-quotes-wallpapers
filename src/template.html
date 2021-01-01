@@ -28,6 +28,11 @@
         z-index: 1;
       }
 
+      .background-image {
+        height: 1440px;
+        width: 2560px;
+      }
+
       .centered {
         width: 70%;
         z-index: 2;
@@ -50,7 +55,7 @@
   </head>
   <body>
     <div class="background">
-      <img src="background.svg" style="height: 1440px; width: 2560px" />
+      <img src="{{backgroundUrl}}" class="background-image" />
     </div>
     <div class="centered">
       <h2 class="title">{{title}}</h2>

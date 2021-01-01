@@ -1,8 +1,12 @@
+import fileUrl from "file-url";
 import { promises as fs } from "fs";
 import path from "path";
 import puppeteer, { Browser, Page } from "puppeteer";
 import { Quote, quotes } from "./quotes";
 import { screenHeight, screenWidth, wallpapersFolderName } from "./settings";
+
+const backgroundFileUrl = fileUrl("../wallpapers/background.svg");
+console.info(backgroundFileUrl);
 
 const getBrowserPage = async (browser: Browser): Promise<Page> => {
   const page = await browser.newPage();
@@ -16,6 +20,7 @@ const getBrowserPage = async (browser: Browser): Promise<Page> => {
 
 const getHtml = async (template: string, quote: Quote): Promise<string> => {
   let html = template
+    .replace("{{backgroundUrl}}", backgroundFileUrl)
     .replace("{{title}}", quote.title ?? "")
     .replace("{{text}}", quote.text)
     .replace("{{author}}", quote.author);

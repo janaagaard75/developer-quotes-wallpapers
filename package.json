@@ -19,6 +19,7 @@
     "@svgdotjs/svg.js": "3.0.16",
     "@types/d3": "6.2.0",
     "@types/puppeteer": "^5.4.2",
+    "file-url": "3.0.0",
     "jsdom": "16.4.0",
     "puppeteer": "^5.5.0",
     "svgdom": "0.1.8",
