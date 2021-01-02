@@ -1,19 +1,9 @@
 import { Svg, SVG } from "@svgdotjs/svg.js";
-import fs from "fs";
-import {
-  screenHeight,
-  screenWidth,
-  strokeWidth,
-  wallpapersFolderName,
-  x,
-  y,
-} from "./settings";
+import { screenHeight, screenWidth, strokeWidth, x, y } from "./settings";
 const { createSVGWindow } = require("svgdom");
 const { registerWindow } = require("@svgdotjs/svg.js");
 
-fs.mkdirSync(wallpapersFolderName, { recursive: true });
-
-class BackgroundGenerator {
+export class BackgroundGenerator {
   constructor() {
     const svgWindow = createSVGWindow();
     registerWindow(svgWindow, svgWindow.document);
@@ -88,6 +78,3 @@ class BackgroundGenerator {
     return Number.parseFloat(value.toFixed(2));
   }
 }
-
-const svgString = new BackgroundGenerator().getSvgString();
-fs.writeFileSync("wallpapers/background.svg", svgString);
