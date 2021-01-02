@@ -20,7 +20,7 @@ const getBrowserPage = async (browser: Browser): Promise<Page> => {
 
 const getHtml = async (template: string, quote: Quote): Promise<string> => {
   let html = template
-    .replace("{{backgroundUrl}}", backgroundFileUrl)
+    .replace("{{backgroundSrc}}", backgroundFileUrl)
     .replace("{{title}}", quote.title ?? "")
     .replace("{{text}}", quote.text)
     .replace("{{author}}", quote.author);
