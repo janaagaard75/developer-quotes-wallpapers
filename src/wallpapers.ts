@@ -1,12 +1,13 @@
-import fileUrl from "file-url";
 import { promises as fs } from "fs";
+import svgToMiniDataURI from "mini-svg-data-uri";
 import path from "path";
 import puppeteer, { Browser, Page } from "puppeteer";
+import { BackgroundGenerator } from "./BackgroundGenerator";
 import { Quote, quotes } from "./quotes";
 import { screenHeight, screenWidth, wallpapersFolderName } from "./settings";
 
-const backgroundFileUrl = fileUrl("../wallpapers/background.svg");
-console.info(backgroundFileUrl);
+const backgroundSvg = new BackgroundGenerator().getSvgString();
+const backgroundSrc = svgToMiniDataURI(backgroundSvg);
 
 const getBrowserPage = async (browser: Browser): Promise<Page> => {
   const page = await browser.newPage();
@@ -20,7 +21,7 @@ const getBrowserPage = async (browser: Browser): Promise<Page> => {
 
 const getHtml = async (template: string, quote: Quote): Promise<string> => {
   let html = template
-    .replace("{{backgroundSrc}}", backgroundFileUrl)
+    .replace("{{backgroundSrc}}", backgroundSrc)
     .replace("{{title}}", quote.title ?? "")
     .replace("{{text}}", quote.text)
     .replace("{{author}}", quote.author);
