@@ -11,7 +11,7 @@
     "yarn": ">=1.22"
   },
   "scripts": {
-    "background": "yarn install && ts-node src/background.ts",
+    "background": "yarn install && ts-node src/BackgroundGenerator.ts",
     "clean": "yarn install && ts-node src/clean.ts",
     "wallpapers": "yarn install && ts-node src/wallpapers.ts"
   },
