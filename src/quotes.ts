@@ -7,14 +7,23 @@ interface IQuote {
 export class Quote {
   constructor(private quote: IQuote) {}
 
-  public get title(): string | undefined {
-    return this.quote.title;
+  public get title(): string {
+    return this.quote.title ?? "";
   }
 
   public get text(): string {
-    const words = this.quote.text.split(/ /);
-
-    return this.quote.text;
+    // Do not break close to commas and full stops. See https://regexr.com/5jjs5.
+    const noBreakBeforePunctuation = this.quote.text.replace(
+      / ([^ ,\.]+[,\.])/g,
+      "&nbsp;$1"
+    );
+    // Do not put single words on the line after commas and full stops. https://regexr.com/5jjt0
+    const noSingleWordsAfterPunctuation = noBreakBeforePunctuation.replace(
+      /([,\.] [^ ,\.]+) /,
+      "$1&nbsp;"
+    );
+    console.log(noSingleWordsAfterPunctuation);
+    return noSingleWordsAfterPunctuation;
   }
 
   public get author(): string {
