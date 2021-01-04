@@ -3,7 +3,7 @@ import svgToMiniDataURI from "mini-svg-data-uri";
 import puppeteer from "puppeteer";
 import { BackgroundGenerator } from "./BackgroundGenerator";
 import { quotes } from "./quotes";
-import { screenHeight, screenWidth, wallpapersFolderName } from "./settings";
+import { wallpapersFolderName } from "./settings";
 import { WallpaperGenerator } from "./WallpaperGenerator";
 
 const backgroundSvg = new BackgroundGenerator().getSvgString();
@@ -30,9 +30,6 @@ const main = async () => {
     const wallpaperGenerator = await WallpaperGenerator.createInstance(
       browser,
       template,
-      wallpapersFolderName,
-      screenHeight,
-      screenWidth,
       backgroundSrc
     );
     await asyncForEach(quotes, async (quote, quoteIndex) => {

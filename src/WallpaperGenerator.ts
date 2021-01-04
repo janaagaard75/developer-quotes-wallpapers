@@ -1,31 +1,20 @@
 import path from "path";
 import { Browser, Page } from "puppeteer";
 import { Quote } from "./Quote";
+import { screenHeight, screenWidth, wallpapersFolderName } from "./settings";
 
 export class WallpaperGenerator {
   private constructor(
     private template: string,
-    private wallpapersFolderName: string,
-    private screenHeight: number,
-    private screenWidth: number,
     private backgroundSrc: string
   ) {}
 
   public static async createInstance(
     browser: Browser,
     template: string,
-    wallpapersFolderName: string,
-    screenHeight: number,
-    screenWidth: number,
     backgroundSrc: string
   ): Promise<WallpaperGenerator> {
-    const instance = new WallpaperGenerator(
-      template,
-      wallpapersFolderName,
-      screenHeight,
-      screenWidth,
-      backgroundSrc
-    );
+    const instance = new WallpaperGenerator(template, backgroundSrc);
     instance.page = await instance.getBrowserPage(browser);
     return instance;
   }
@@ -36,7 +25,7 @@ export class WallpaperGenerator {
     const html = await this.getHtml(quote);
     await this.page.setContent(html);
     const screenshotFilePath = this.getScreenshotFilePath(
-      this.wallpapersFolderName,
+      wallpapersFolderName,
       quoteIndex
     );
     await this.page.screenshot({ path: screenshotFilePath });
@@ -46,8 +35,8 @@ export class WallpaperGenerator {
     const page = await browser.newPage();
     await page.setViewport({
       deviceScaleFactor: 1,
-      height: this.screenHeight,
-      width: this.screenWidth,
+      height: screenHeight,
+      width: screenWidth,
     });
     return page;
   }
