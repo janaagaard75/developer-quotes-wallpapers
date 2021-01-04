@@ -1,10 +1,10 @@
-export interface Quote {
+export interface IQuote {
   title?: string;
   text: string;
   author: string;
 }
 
-export const quotes: Array<Quote> = [
+export const quotes: Array<IQuote> = [
   {
     title: "Gall's Law",
     text:
