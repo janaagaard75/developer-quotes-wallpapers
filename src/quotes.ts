@@ -12,6 +12,8 @@ export class Quote {
   }
 
   public get text(): string {
+    return this.quote.text;
+    /*
     // Do not break close to commas and full stops. See https://regexr.com/5jjs5.
     const noBreakBeforePunctuation = this.quote.text.replace(
       / ([^ ,\.]+[,\.])/g,
@@ -23,6 +25,7 @@ export class Quote {
       "$1&nbsp;"
     );
     return noSingleWordsAfterPunctuation;
+    */
   }
 
   public get author(): string {
