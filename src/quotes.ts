@@ -12,6 +12,8 @@ export class Quote {
   }
 
   public get text(): string {
+    const words = this.quote.text.split(/ /);
+
     return this.quote.text;
   }
 
@@ -67,7 +69,8 @@ export const quotes: Array<Quote> = [
     author: "Linus Torvalds",
   },
   {
-    text: "How does a project get to be a year late?… One day at a time.",
+    text:
+      "How does a project get to be a year late?&hellip; One day at a time.",
     author: "Fred Brooks",
   },
   {
