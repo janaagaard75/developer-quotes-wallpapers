@@ -1,6 +1,6 @@
 import path from "path";
 import { Browser, Page } from "puppeteer";
-import { IQuote } from "./quotes";
+import { Quote } from "./quotes";
 
 export class WallpaperGenerator {
   private constructor(
@@ -32,7 +32,7 @@ export class WallpaperGenerator {
 
   private page!: Page;
 
-  public async generate(quote: IQuote, quoteIndex: number) {
+  public async generate(quote: Quote, quoteIndex: number) {
     const html = await this.getHtml(quote);
     await this.page.setContent(html);
     const screenshotFilePath = this.getScreenshotFilePath(
@@ -52,7 +52,7 @@ export class WallpaperGenerator {
     return page;
   }
 
-  private async getHtml(quote: IQuote): Promise<string> {
+  private async getHtml(quote: Quote): Promise<string> {
     let html = this.template
       .replace("{{backgroundSrc}}", this.backgroundSrc)
       .replace("{{title}}", quote.title ?? "")

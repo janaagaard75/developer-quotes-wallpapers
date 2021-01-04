@@ -1,10 +1,26 @@
-export interface IQuote {
+interface IQuote {
   title?: string;
   text: string;
   author: string;
 }
 
-export const quotes: Array<IQuote> = [
+export class Quote {
+  constructor(private quote: IQuote) {}
+
+  public get title(): string | undefined {
+    return this.quote.title;
+  }
+
+  public get text(): string {
+    return this.quote.text;
+  }
+
+  public get author(): string {
+    return this.quote.author;
+  }
+}
+
+export const quotes: Array<Quote> = [
   {
     title: "Gall's Law",
     text:
@@ -155,4 +171,4 @@ export const quotes: Array<IQuote> = [
       "When I’m working on a problem, I never think about beauty. I think only how to solve the problem. But when I have finished, if the solution is not beautiful, I know it is wrong.",
     author: "Freeman Dyson",
   },
-];
+].map((quoteData) => new Quote(quoteData));
