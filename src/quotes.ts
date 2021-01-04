@@ -22,7 +22,6 @@ export class Quote {
       /([,\.] [^ ,\.]+) /,
       "$1&nbsp;"
     );
-    console.log(noSingleWordsAfterPunctuation);
     return noSingleWordsAfterPunctuation;
   }
 
