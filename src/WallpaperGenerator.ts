@@ -1,6 +1,6 @@
 import path from "path";
 import { Browser, Page } from "puppeteer";
-import { Quote } from "./quotes";
+import { Quote } from "./Quote";
 
 export class WallpaperGenerator {
   private constructor(
