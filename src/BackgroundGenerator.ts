@@ -15,24 +15,25 @@ export class BackgroundGenerator {
 
   public getSvgString(): string {
     const rnd = BackgroundGenerator.round;
+    const color = BackgroundGenerator.getColor;
     for (let i = 0; i < screenWidth / x; i++) {
       for (let j = -1; j < screenHeight / y; j++) {
         if ((i + j) % 2 === 0) {
           this.svgCanvas
             .polygon(`0,0 ${rnd(x)},${rnd(y)} 0,${rnd(2 * y)}`)
             .move(rnd(i * x), rnd(j * y))
-            .fill(BackgroundGenerator.getColor(i, j))
+            .fill(color(i, j))
             .stroke({
-              color: BackgroundGenerator.getColor(i, j),
+              color: color(i, j),
               width: strokeWidth,
             });
         } else {
           this.svgCanvas
             .polygon(`0,${rnd(y)} ${rnd(x)},0 ${rnd(x)},${rnd(2 * y)}`)
             .move(rnd(i * x), rnd(j * y))
-            .fill(BackgroundGenerator.getColor(i, j))
+            .fill(color(i, j))
             .stroke({
-              color: BackgroundGenerator.getColor(i, j),
+              color: color(i, j),
               width: strokeWidth,
             });
         }
