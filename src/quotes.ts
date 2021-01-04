@@ -1,8 +1,4 @@
-export interface Quote {
-  title?: string;
-  text: string;
-  author: string;
-}
+import { Quote } from "./Quote";
 
 export const quotes: Array<Quote> = [
   {
@@ -51,7 +47,8 @@ export const quotes: Array<Quote> = [
     author: "Linus Torvalds",
   },
   {
-    text: "How does a project get to be a year late?… One day at a time.",
+    text:
+      "How does a project get to be a year late?&hellip; One day at a time.",
     author: "Fred Brooks",
   },
   {
@@ -155,4 +152,4 @@ export const quotes: Array<Quote> = [
       "When I’m working on a problem, I never think about beauty. I think only how to solve the problem. But when I have finished, if the solution is not beautiful, I know it is wrong.",
     author: "Freeman Dyson",
   },
-];
+].map((quoteData) => new Quote(quoteData));
