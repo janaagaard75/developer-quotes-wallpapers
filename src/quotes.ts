@@ -2,6 +2,10 @@ import { Quote } from "./Quote";
 
 export const quotes: Array<Quote> = [
   {
+    text: "A designer knows he has achieved perfection not when there is nothing left to add, but when there is nothing left to take away.",
+    author: "Antoine de Saint-Exupery"
+  },
+  {
     title: "Gall's Law",
     text:
       "A complex system that works is invariably found to have evolved from a simple system that worked. A complex system designed from scratch never works and cannot be patched up to make it work. You have to start over with a working simple system.",
