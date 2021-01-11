@@ -11,7 +11,7 @@
     "yarn": ">=1.22"
   },
   "scripts": {
-    "generate-wallpapers": "yarn install && ts-node src/generate-wallpapers.ts"
+    "start": "yarn install && ts-node src/generate-wallpapers.ts"
   },
   "dependencies": {
     "@types/puppeteer": "^5.4.2",

@@ -6,7 +6,7 @@ Generate wallpapers with software development quotes.
 
 Generate wallpapers:
 
-    yarn generate-wallpapers
+    yarn start
 
 ## Notes
 
