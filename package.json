@@ -11,7 +11,6 @@
     "yarn": ">=1.22"
   },
   "scripts": {
-    "clean": "yarn install && ts-node src/clean.ts",
     "generate-wallpapers": "yarn install && ts-node src/generate-wallpapers.ts"
   },
   "dependencies": {
