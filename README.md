@@ -7,7 +7,3 @@ Generate wallpapers with software development quotes.
 Generate wallpapers:
 
     yarn start
-
-## Notes
-
-Grid work in progress: <https://stackblitz.com/edit/typescript-dscjbq?file=index.ts>
