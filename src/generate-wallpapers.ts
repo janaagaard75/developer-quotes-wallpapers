@@ -15,6 +15,7 @@ const asyncForEach = async <T>(
 };
 
 const main = async () => {
+  await fs.rmdir(wallpapersFolderName, { recursive: true });
   await fs.mkdir(wallpapersFolderName, { recursive: true });
 
   const browser = await puppeteer.launch({ headless: true });
