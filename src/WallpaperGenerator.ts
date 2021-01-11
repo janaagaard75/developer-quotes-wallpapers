@@ -2,6 +2,14 @@ import path from "path";
 import { Browser, Page } from "puppeteer";
 import { Quote } from "./Quote";
 
+interface WallpaperGeneratorSettings {
+  browser: Browser;
+  template: string;
+  screenHeight: number;
+  screenWidth: number;
+  wallpapersFolderName: string;
+}
+
 export class WallpaperGenerator {
   private constructor(
     private template: string,
@@ -11,19 +19,15 @@ export class WallpaperGenerator {
   ) {}
 
   public static async createInstance(
-    browser: Browser,
-    template: string,
-    screenHeight: number,
-    screenWidth: number,
-    wallpapersFolderName: string
+    settings: WallpaperGeneratorSettings
   ): Promise<WallpaperGenerator> {
     const instance = new WallpaperGenerator(
-      template,
-      screenHeight,
-      screenWidth,
-      wallpapersFolderName
+      settings.template,
+      settings.screenHeight,
+      settings.screenWidth,
+      settings.wallpapersFolderName
     );
-    instance.page = await instance.getBrowserPage(browser);
+    instance.page = await instance.getBrowserPage(settings.browser);
     return instance;
   }
 

@@ -3,8 +3,6 @@ import puppeteer from "puppeteer";
 import { quotes } from "./quotes";
 import { WallpaperGenerator } from "./WallpaperGenerator";
 
-const screenHeight = 1440;
-const screenWidth = 2560;
 const wallpapersFolderName = "wallpapers";
 
 // Can't use forEach with a async callback. This is the workaround. https://codeburst.io/javascript-async-await-with-foreach-b6ba62bbf404
@@ -26,13 +24,13 @@ const main = async () => {
     const template = await fs.readFile("src/template.html", {
       encoding: "utf-8",
     });
-    const wallpaperGenerator = await WallpaperGenerator.createInstance(
-      browser,
-      template,
-      screenHeight,
-      screenWidth,
-      "wallpapers"
-    );
+    const wallpaperGenerator = await WallpaperGenerator.createInstance({
+      browser: browser,
+      template: template,
+      screenHeight: 1440,
+      screenWidth: 2560,
+      wallpapersFolderName: "wallpapers",
+    });
     await asyncForEach(quotes, async (quote, quoteIndex) => {
       await wallpaperGenerator.generate(quote, quoteIndex);
     });
