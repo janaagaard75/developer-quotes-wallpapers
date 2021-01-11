@@ -8,13 +8,9 @@ Remove the `wallpapers` folder:
 
     yarn clean
 
-Generate `background.svg`:
-
-    yarn background
-
 Generate wallpapers:
 
-    yarn wallpapers
+    yarn generate-wallpapers
 
 ## Notes
 

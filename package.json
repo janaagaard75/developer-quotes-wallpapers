@@ -12,17 +12,11 @@
   },
   "scripts": {
     "clean": "yarn install && ts-node src/clean.ts",
-    "generate-background": "yarn install && ts-node src/generate-background.ts",
     "generate-wallpapers": "yarn install && ts-node src/generate-wallpapers.ts"
   },
   "dependencies": {
-    "@svgdotjs/svg.js": "3.0.16",
-    "@types/d3": "6.2.0",
     "@types/puppeteer": "^5.4.2",
-    "jsdom": "16.4.0",
-    "mini-svg-data-uri": "1.2.3",
     "puppeteer": "^5.5.0",
-    "svgdom": "0.1.8",
     "ts-node": "^9.1.1",
     "typescript": "^4.1.3"
   }

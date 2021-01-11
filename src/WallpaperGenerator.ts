@@ -4,17 +4,13 @@ import { Quote } from "./Quote";
 import { screenHeight, screenWidth, wallpapersFolderName } from "./settings";
 
 export class WallpaperGenerator {
-  private constructor(
-    private template: string,
-    private backgroundSrc: string
-  ) {}
+  private constructor(private template: string) {}
 
   public static async createInstance(
     browser: Browser,
-    template: string,
-    backgroundSrc: string
+    template: string
   ): Promise<WallpaperGenerator> {
-    const instance = new WallpaperGenerator(template, backgroundSrc);
+    const instance = new WallpaperGenerator(template);
     instance.page = await instance.getBrowserPage(browser);
     return instance;
   }
@@ -43,7 +39,6 @@ export class WallpaperGenerator {
 
   private async getHtml(quote: Quote): Promise<string> {
     let html = this.template
-      .replace("{{backgroundSrc}}", this.backgroundSrc)
       .replace("{{title}}", quote.title ?? "")
       .replace("{{text}}", quote.text)
       .replace("{{author}}", quote.author);
