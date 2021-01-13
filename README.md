@@ -15,4 +15,4 @@ Generate wallpapers:
 ![Quote](wallpapers/quote-06.png)
 ![Quote](wallpapers/quote-09.png)
 ![Quote](wallpapers/quote-10.png)
-![Quote](wallpapers/quote-14.png)
+![Quote](wallpapers/quote-13.png)
