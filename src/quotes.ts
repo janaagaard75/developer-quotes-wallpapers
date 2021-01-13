@@ -58,11 +58,6 @@ export const quotes: Array<Quote> = [
   },
   {
     text:
-      "I have always wished for my computer to be as easy to use as my telephone; my wish has come true because I can no longer figure out how to use my telephone.",
-    author: "Bjarne Stroustrup",
-  },
-  {
-    text:
       "If you cannot grok the overall structure of a program while taking a shower, you are not ready to code it.",
     author: "Richard Pattis",
   },
