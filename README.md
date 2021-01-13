@@ -1,4 +1,4 @@
-# quotes-wallpapers
+# Wallpapers with Developer Quotes
 
 Generate wallpapers with software development quotes.
 
