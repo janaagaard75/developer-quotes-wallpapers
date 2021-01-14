@@ -10,7 +10,7 @@ Generate wallpapers:
 
 ## Wallpapers
 
-The wallpapers are located in the [wallpapers folder](../tree/main/wallpapers). You can grab all with the [all-wallpapers.zip file](blob/main/wallpapers/all-wallpapers.zip?raw=true).
+The wallpapers are located in the [wallpapers folder](/janaagaard75/developer-quotes-wallpapers/tree/main/wallpapers). You can grab all with the [all-wallpapers.zip file](/janaagaard75/developer-quotes-wallpapers/blob/main/wallpapers/all-wallpapers.zip?raw=true).
 
 ### Samples
 
