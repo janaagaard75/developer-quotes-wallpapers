@@ -10,9 +10,7 @@ Generate wallpapers:
 
 ## Some of the Wallpapers
 
-![Quote](wallpapers/quote-02.png)
-![Quote](wallpapers/quote-03.png)
-![Quote](wallpapers/quote-06.png)
-![Quote](wallpapers/quote-09.png)
-![Quote](wallpapers/quote-10.png)
-![Quote](wallpapers/quote-13.png)
+![Quote](wallpapers/linus-law.png)
+![Quote](wallpapers/everybody-loves-hates-prettier.png)
+![Quote](wallpapers/duplication-is-cheaper.png)
+![Quote](wallpapers/make-interfaces-easy.png)
