@@ -22,6 +22,7 @@ const main = async () => {
       wallpapersFolderName: "wallpapers",
     });
     for (const fileName in quotes) {
+      console.log(`Generating ${fileName}...`);
       await wallpaperGenerator.generate(fileName, quotes[fileName]);
     }
   } finally {
