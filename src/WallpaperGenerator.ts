@@ -1,6 +1,7 @@
 import path from "path";
 import { Browser, Page } from "puppeteer";
 import { Quote } from "./Quote";
+import { QuoteData } from "./QuoteData";
 
 interface WallpaperGeneratorSettings {
   browser: Browser;
@@ -33,12 +34,13 @@ export class WallpaperGenerator {
 
   private page!: Page;
 
-  public async generate(quote: Quote, quoteIndex: number) {
+  public async generate(fileName: string, quoteData: QuoteData) {
+    const quote = new Quote(quoteData);
     const html = await this.getHtml(quote);
     await this.page.setContent(html);
-    const screenshotFilePath = this.getScreenshotFilePath(
+    const screenshotFilePath = WallpaperGenerator.getScreenshotFilePath(
       this.wallpapersFolderName,
-      quoteIndex
+      fileName
     );
     await this.page.screenshot({ path: screenshotFilePath });
   }
@@ -61,22 +63,16 @@ export class WallpaperGenerator {
     return html;
   }
 
-  private getScreenshotFilePath(
+  private static getScreenshotFilePath(
     wallpapersFolderName: string,
-    quoteIndex: number
+    fileName: string
   ): string {
     const screenshotFilePath = path.join(
       __dirname,
       "..",
       wallpapersFolderName,
-      `quote-${WallpaperGenerator.padNumber(quoteIndex + 1, 2)}.png`
+      `${fileName}.png`
     );
     return screenshotFilePath;
-  }
-
-  private static padNumber(value: number, size: number): string {
-    const paddedValue = "000000000" + value;
-    const paddedAndTrimmedValue = paddedValue.substr(-size);
-    return paddedAndTrimmedValue;
   }
 }

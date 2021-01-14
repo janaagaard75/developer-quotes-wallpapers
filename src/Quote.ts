@@ -1,11 +1,7 @@
-interface IQuote {
-  title?: string;
-  text: string;
-  author: string;
-}
+import { QuoteData } from "./QuoteData";
 
 export class Quote {
-  constructor(private quote: IQuote) {}
+  constructor(private quote: QuoteData) {}
 
   public get title(): string {
     return this.quote.title ?? "";
