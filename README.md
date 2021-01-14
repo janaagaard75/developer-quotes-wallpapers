@@ -8,7 +8,11 @@ Generate wallpapers:
 
     yarn start
 
-## Some of the Wallpapers
+## Wallpapers
+
+The wallpapers are located in the [wallpapers folder](tree/main/wallpapers). You can grab all with the [all-wallpapers.zip file](tree/main/wallpapers/all-wallpapers.zip).
+
+### Samples
 
 ![Quote](wallpapers/linus-law.png)
 ![Quote](wallpapers/everybody-loves-hates-prettier.png)
