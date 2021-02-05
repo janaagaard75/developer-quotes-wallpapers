@@ -126,6 +126,10 @@ export const quotes: { [fileName: string]: QuoteData } = {
       "Sometimes it pays to stay in bed on Monday, rather than spending the rest of the week debugging Monday’s code.",
     author: "Christopher Thompson",
   },
+  "user-exploitation": {
+    text: "UX is now &lsquo;user exploitation&rsquo;.",
+    author: "Mark Hurst",
+  },
   "violent-psychopath": {
     text:
       "Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live.",
