@@ -144,7 +144,7 @@ export const quotes: { [fileName: string]: QuoteData } = {
     text: "The only valid measurement of code quality: WTFs/minute.",
     author: "Thom Holwerda",
   },
-  yagni: {
+  "yagni": {
     title: "YAGNI (You Ain't Gonna Need It)",
     text:
       "Always implement things when you actually need them, never when you just foresee that you need them.",
