@@ -136,6 +136,10 @@ export const quotes: { [fileName: string]: QuoteData } = {
       "Walking on water and developing software from a specification are easy if both are frozen.",
     author: "Edward V. Berard",
   },
+  "wtfs-per-minute": {
+    text: "The only valid measurement of code quality: WTFs/minute.",
+    author: "Thom Holwerda",
+  },
   yagni: {
     title: "YAGNI (You Ain't Gonna Need It)",
     text:

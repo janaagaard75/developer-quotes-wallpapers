@@ -6,6 +6,7 @@
     "Exupery",
     "Highsmith",
     "Hoare",
+    "Holwerda",
     "Hyman",
     "Jeffries",
     "Kernighan",
@@ -16,6 +17,7 @@
     "Sinz",
     "Strathern",
     "Stroustrup",
+    "Thom",
     "YAGNI",
     "conways",
     "dont",
@@ -30,7 +32,8 @@
     "rdquo",
     "svgdom",
     "svgdotjs",
-    "svgjs"
+    "svgjs",
+    "wtfs"
   ],
   "editor.codeActionsOnSave": {
     "source.organizeImports": true
