@@ -8,6 +8,8 @@
     "Hoare",
     "Holwerda",
     "Hyman",
+    "Hyrum",
+    "Hyrum's",
     "Jeffries",
     "Kernighan",
     "Parnas",
@@ -24,6 +26,7 @@
     "grensley",
     "hellip",
     "hofstadters",
+    "hyrums",
     "janaagaard",
     "ldquo",
     "lsquo",
@@ -35,6 +38,7 @@
     "svgdom",
     "svgdotjs",
     "svgjs",
+    "syncyarnlock",
     "wtfs"
   ],
   "editor.codeActionsOnSave": {
