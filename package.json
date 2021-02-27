@@ -11,13 +11,14 @@
     "yarn": ">=1.22"
   },
   "scripts": {
-    "start": "yarn install && ts-node src/generate-wallpapers.ts"
+    "start": "yarn install && ts-node src/generate-wallpapers.ts",
+    "update-packages": "yarn upgrade && npx syncyarnlock -k -s && yarn install"
   },
   "dependencies": {
     "@types/adm-zip": "^0.4.33",
-    "adm-zip": "^0.5.1",
-    "puppeteer": "8",
+    "adm-zip": "^0.5.3",
+    "puppeteer": "8.0.0",
     "ts-node": "^9.1.1",
-    "typescript": "^4.1.3"
+    "typescript": "^4.2.2"
   }
 }
