@@ -3,7 +3,7 @@ import { QuoteData } from "./QuoteData";
 export const quotes: { [fileName: string]: QuoteData } = {
   "beautiful-solution": {
     text:
-      "When I’m working on a problem, I never think about beauty. I think only how to solve the problem. But when I have finished, if the solution is not beautiful, I know it is wrong.",
+      "When I'm working on a problem, I never think about beauty. I think only how to solve the problem. But when I have finished, if the solution is not beautiful, I know it is wrong.",
     author: "Freeman Dyson",
   },
   "brooks-law": {
