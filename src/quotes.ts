@@ -31,12 +31,6 @@ export const quotes: { [fileName: string]: QuoteData } = {
       "Nobody loves what Prettier does to their syntax. Everyone loves what Prettier does to their coworkers' syntax.",
     author: "u/grensley",
   },
-  "galls-law": {
-    title: "Gall's Law",
-    text:
-      "A complex system that works is invariably found to have evolved from a simple system that worked. A complex system designed from scratch never works and cannot be patched up to make it work. You have to start over with a working simple system.",
-    author: "John Gall",
-  },
   "hofstadters-law": {
     title: "Hofstadter's Law",
     text:
