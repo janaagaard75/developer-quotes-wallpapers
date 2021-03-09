@@ -127,6 +127,10 @@ export const quotes: { [fileName: string]: QuoteData } = {
       "Sometimes it pays to stay in bed on Monday, rather than spending the rest of the week debugging Monday’s code.",
     author: "Christopher Thompson",
   },
+  "suck-at-the-average": {
+    text: "I suspect devs are actually decent at estimating the *median* time to complete a task. Planning is hard because they suck at the *average*.",
+    author: "Erik Bernhardsson"
+  },
   "user-exploitation": {
     text: "UX is now &lsquo;user exploitation&rsquo;.",
     author: "Mark Hurst",
