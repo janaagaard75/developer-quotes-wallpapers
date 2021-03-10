@@ -11,6 +11,11 @@ export const quotes: { [fileName: string]: QuoteData } = {
     text: "Adding manpower to a late software project makes it later.",
     author: "Fred Brooks",
   },
+  "comments-are-a-failure": {
+    text:
+      "A comment is a failure to express yourself in code.  If you fail, then write a comment; but try not to fail.",
+    author: "Uncle Bob Martin",
+  },
   "conways-law": {
     title: "Conway's Law",
     text:
@@ -128,8 +133,9 @@ export const quotes: { [fileName: string]: QuoteData } = {
     author: "Christopher Thompson",
   },
   "suck-at-the-average": {
-    text: "I suspect devs are actually decent at estimating the *median* time to complete a task. Planning is hard because they suck at the *average*.",
-    author: "Erik Bernhardsson"
+    text:
+      "I suspect devs are actually decent at estimating the *median* time to complete a task. Planning is hard because they suck at the *average*.",
+    author: "Erik Bernhardsson",
   },
   "user-exploitation": {
     text: "UX is now &lsquo;user exploitation&rsquo;.",
