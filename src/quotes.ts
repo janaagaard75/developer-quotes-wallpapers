@@ -137,6 +137,10 @@ export const quotes: { [fileName: string]: QuoteData } = {
       "I suspect devs are actually decent at estimating the *median* time to complete a task. Planning is hard because they suck at the *average*.",
     author: "Erik Bernhardsson",
   },
+  "the-s-in-iot": {
+    text: "The S in IoT is for Security.",
+    author: "Todd Weaver",
+  },
   "user-exploitation": {
     text: "UX is now &lsquo;user exploitation&rsquo;.",
     author: "Mark Hurst",
