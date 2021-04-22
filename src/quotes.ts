@@ -36,6 +36,10 @@ export const quotes: { [fileName: string]: QuoteData } = {
       "Nobody loves what Prettier does to their syntax. Everyone loves what Prettier does to their coworkers' syntax.",
     author: "u/grensley",
   },
+  "harder-to-read-than-write": {
+    text: "It's harder to read code than to write it.",
+    author: "Joel Spolsky",
+  },
   "hofstadters-law": {
     title: "Hofstadter's Law",
     text:
