@@ -38,10 +38,7 @@ export class WallpaperGenerator {
     const quote = new Quote(quoteData);
     const html = await this.getHtml(quote);
     await this.page.setContent(html);
-    const screenshotFilePath = WallpaperGenerator.getScreenshotFilePath(
-      this.wallpapersRootFolderName,
-      fileName
-    );
+    const screenshotFilePath = this.getScreenshotFilePath(fileName);
     await this.page.screenshot({ path: screenshotFilePath });
   }
 
@@ -63,14 +60,11 @@ export class WallpaperGenerator {
     return html;
   }
 
-  private static getScreenshotFilePath(
-    wallpapersRootFolderName: string,
-    fileName: string
-  ): string {
+  private getScreenshotFilePath(fileName: string): string {
     const screenshotFilePath = path.join(
       __dirname,
       "..",
-      wallpapersRootFolderName,
+      this.wallpapersRootFolderName,
       `${fileName}.png`
     );
     return screenshotFilePath;
