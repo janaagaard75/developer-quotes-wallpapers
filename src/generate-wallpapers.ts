@@ -4,11 +4,11 @@ import puppeteer from "puppeteer";
 import { quotes } from "./quotes";
 import { WallpaperGenerator } from "./WallpaperGenerator";
 
-const wallpapersFolderName = "wallpapers";
+const wallpapersRootFolderName = "wallpapers";
 
 const main = async () => {
-  await fs.rmdir(wallpapersFolderName, { recursive: true });
-  await fs.mkdir(wallpapersFolderName, { recursive: true });
+  await fs.rmdir(wallpapersRootFolderName, { recursive: true });
+  await fs.mkdir(wallpapersRootFolderName, { recursive: true });
 
   const browser = await puppeteer.launch({ headless: true });
   try {
@@ -20,7 +20,7 @@ const main = async () => {
       template: template,
       screenHeight: 1440,
       screenWidth: 2560,
-      wallpapersFolderName: wallpapersFolderName,
+      wallpapersRootFolderName: wallpapersRootFolderName,
     });
     for (const fileName in quotes) {
       console.log(`Generating ${fileName}.png...`);
@@ -32,8 +32,8 @@ const main = async () => {
 
   console.log("Compressing into all-wallpapers.zip...");
   const zip = new AdmZip();
-  zip.addLocalFolder(wallpapersFolderName);
-  zip.writeZip(`${wallpapersFolderName}/all-wallpapers.zip`);
+  zip.addLocalFolder(wallpapersRootFolderName);
+  zip.writeZip(`${wallpapersRootFolderName}/all-wallpapers.zip`);
 };
 
 main();

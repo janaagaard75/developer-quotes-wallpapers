@@ -8,7 +8,7 @@ interface WallpaperGeneratorSettings {
   template: string;
   screenHeight: number;
   screenWidth: number;
-  wallpapersFolderName: string;
+  wallpapersRootFolderName: string;
 }
 
 export class WallpaperGenerator {
@@ -16,7 +16,7 @@ export class WallpaperGenerator {
     private template: string,
     private screenHeight: number,
     private screenWidth: number,
-    private wallpapersFolderName: string
+    private wallpapersRootFolderName: string
   ) {}
 
   public static async createInstance(
@@ -26,7 +26,7 @@ export class WallpaperGenerator {
       settings.template,
       settings.screenHeight,
       settings.screenWidth,
-      settings.wallpapersFolderName
+      settings.wallpapersRootFolderName
     );
     instance.page = await instance.getBrowserPage(settings.browser);
     return instance;
@@ -39,7 +39,7 @@ export class WallpaperGenerator {
     const html = await this.getHtml(quote);
     await this.page.setContent(html);
     const screenshotFilePath = WallpaperGenerator.getScreenshotFilePath(
-      this.wallpapersFolderName,
+      this.wallpapersRootFolderName,
       fileName
     );
     await this.page.screenshot({ path: screenshotFilePath });
@@ -64,13 +64,13 @@ export class WallpaperGenerator {
   }
 
   private static getScreenshotFilePath(
-    wallpapersFolderName: string,
+    wallpapersRootFolderName: string,
     fileName: string
   ): string {
     const screenshotFilePath = path.join(
       __dirname,
       "..",
-      wallpapersFolderName,
+      wallpapersRootFolderName,
       `${fileName}.png`
     );
     return screenshotFilePath;
