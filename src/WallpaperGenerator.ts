@@ -36,6 +36,10 @@ export class WallpaperGenerator {
   private page!: Page;
 
   public async generate(fileName: string, quoteData: QuoteData) {
+    console.log(
+      `Generating ${this.screenWidth}x${this.screenHeight}/${fileName}.png...`
+    );
+
     const quote = new Quote(quoteData);
     const html = await this.getHtml(quote);
     await this.page.setContent(html);

@@ -1,8 +1,8 @@
-import AdmZip from "adm-zip";
 import { promises as fs } from "fs";
 import puppeteer from "puppeteer";
 import { quotes } from "./quotes";
 import { WallpaperGenerator } from "./WallpaperGenerator";
+import { WallpaperZipper } from "./WallpaperZipper";
 
 const wallpapersRootFolderName = "wallpapers";
 
@@ -22,17 +22,18 @@ const main = async () => {
       wallpapersRootFolderName: wallpapersRootFolderName,
     });
     for (const fileName in quotes) {
-      console.log(`Generating ${fileName}.png...`);
       await wallpaperGenerator.generate(fileName, quotes[fileName]);
     }
   } finally {
     await browser.close();
   }
 
-  console.log("Compressing into all-wallpapers.zip...");
-  const zip = new AdmZip();
-  zip.addLocalFolder(wallpapersRootFolderName);
-  zip.writeZip(`${wallpapersRootFolderName}/all-wallpapers.zip`);
+  const wallpaperZipper = new WallpaperZipper({
+    screenHeight: 1440,
+    screenWidth: 2560,
+    wallpapersRootFolderName: wallpapersRootFolderName,
+  });
+  wallpaperZipper.compress();
 };
 
 main();
