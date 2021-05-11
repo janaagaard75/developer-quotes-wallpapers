@@ -65,6 +65,7 @@ export class WallpaperGenerator {
       __dirname,
       "..",
       this.wallpapersRootFolderName,
+      `${this.screenWidth}x${this.screenHeight}`,
       `${fileName}.png`
     );
     return screenshotFilePath;
