@@ -1,3 +1,4 @@
+import { promises as fs } from "fs";
 import path from "path";
 import { Browser, Page } from "puppeteer";
 import { Quote } from "./Quote";
@@ -38,7 +39,12 @@ export class WallpaperGenerator {
     const quote = new Quote(quoteData);
     const html = await this.getHtml(quote);
     await this.page.setContent(html);
-    const screenshotFilePath = this.getScreenshotFilePath(fileName);
+    const wallpaperFolderName = this.getWallpaperFolderName();
+    await fs.mkdir(wallpaperFolderName, { recursive: true });
+    const screenshotFilePath = this.getScreenshotFilePath(
+      wallpaperFolderName,
+      fileName
+    );
     await this.page.screenshot({ path: screenshotFilePath });
   }
 
@@ -60,12 +66,22 @@ export class WallpaperGenerator {
     return html;
   }
 
-  private getScreenshotFilePath(fileName: string): string {
-    const screenshotFilePath = path.join(
+  private getWallpaperFolderName(): string {
+    const wallpaperFolderName = path.join(
       __dirname,
       "..",
       this.wallpapersRootFolderName,
-      `${this.screenWidth}x${this.screenHeight}`,
+      `${this.screenWidth}x${this.screenHeight}`
+    );
+    return wallpaperFolderName;
+  }
+
+  private getScreenshotFilePath(
+    wallpaperFolderName: string,
+    fileName: string
+  ): string {
+    const screenshotFilePath = path.join(
+      wallpaperFolderName,
       `${fileName}.png`
     );
     return screenshotFilePath;

@@ -8,7 +8,6 @@ const wallpapersRootFolderName = "wallpapers";
 
 const main = async () => {
   await fs.rmdir(wallpapersRootFolderName, { recursive: true });
-  await fs.mkdir(wallpapersRootFolderName, { recursive: true });
 
   const browser = await puppeteer.launch({ headless: true });
   try {
