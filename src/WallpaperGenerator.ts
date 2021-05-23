@@ -42,7 +42,7 @@ export class WallpaperGenerator {
 
     const quote = new Quote(quoteData);
     const html = await this.getHtml(quote);
-    await this.page.setContent(html);
+    await this.page.setContent(html, { waitUntil: "networkidle0" });
     const wallpaperFolderName = this.getWallpaperFolderName();
     await fs.mkdir(wallpaperFolderName, { recursive: true });
     const screenshotFilePath = this.getScreenshotFilePath(
