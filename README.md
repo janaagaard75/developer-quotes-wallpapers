@@ -10,11 +10,12 @@ Generate wallpapers:
 
 ## Wallpapers
 
-The wallpapers are located in the [wallpapers folder](/../../tree/main/wallpapers). You can grab all with the [all-wallpapers.zip file](/../../blob/main/wallpapers/all-wallpapers.zip?raw=true).
+The wallpapers are located in the [wallpapers folder](/../../tree/main/wallpapers).
 
 ### Samples
 
-![Quote](wallpapers/linus-law.png)
-![Quote](wallpapers/everybody-loves-hates-prettier.png)
-![Quote](wallpapers/duplication-is-cheaper.png)
-![Quote](wallpapers/make-interfaces-easy.png)
+![Quote](wallpapers/2560x1440/linus-law.png)
+![Quote](wallpapers/2560x1440/everybody-loves-hates-prettier.png)
+![Quote](wallpapers/2560x1440/duplication-is-cheaper.png)
+![Quote](wallpapers/2560x1440/make-interfaces-easy.png)
+![Quote](wallpapers/2560x1440/any-fool.png)

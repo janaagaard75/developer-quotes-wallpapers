@@ -1,39 +1,57 @@
-import AdmZip from "adm-zip";
 import { promises as fs } from "fs";
 import puppeteer from "puppeteer";
 import { quotes } from "./quotes";
 import { WallpaperGenerator } from "./WallpaperGenerator";
+import { WallpaperZipper } from "./WallpaperZipper";
 
-const wallpapersFolderName = "wallpapers";
+const wallpapersRootFolderName = "wallpapers";
 
-const main = async () => {
-  await fs.rmdir(wallpapersFolderName, { recursive: true });
-  await fs.mkdir(wallpapersFolderName, { recursive: true });
-
-  const browser = await puppeteer.launch({ headless: true });
-  try {
-    const template = await fs.readFile("src/template.html", {
-      encoding: "utf-8",
-    });
-    const wallpaperGenerator = await WallpaperGenerator.createInstance({
-      browser: browser,
-      template: template,
+const screenResolutions: Array<{ screenHeight: number; screenWidth: number }> =
+  [
+    {
       screenHeight: 1440,
       screenWidth: 2560,
-      wallpapersFolderName: wallpapersFolderName,
-    });
-    for (const fileName in quotes) {
-      console.log(`Generating ${fileName}.png...`);
-      await wallpaperGenerator.generate(fileName, quotes[fileName]);
-    }
-  } finally {
-    await browser.close();
-  }
+    },
+    {
+      screenHeight: 2160,
+      screenWidth: 3840,
+    },
+    {
+      screenWidth: 3440,
+      screenHeight: 1440,
+    },
+  ];
 
-  console.log("Compressing into all-wallpapers.zip...");
-  const zip = new AdmZip();
-  zip.addLocalFolder(wallpapersFolderName);
-  zip.writeZip(`${wallpapersFolderName}/all-wallpapers.zip`);
+const main = async () => {
+  await fs.rmdir(wallpapersRootFolderName, { recursive: true });
+
+  for (let screenResolution of screenResolutions) {
+    const browser = await puppeteer.launch({ headless: true });
+    try {
+      const template = await fs.readFile("src/template.html", {
+        encoding: "utf-8",
+      });
+      const wallpaperGenerator = await WallpaperGenerator.createInstance({
+        browser: browser,
+        template: template,
+        screenHeight: screenResolution.screenHeight,
+        screenWidth: screenResolution.screenWidth,
+        wallpapersRootFolderName: wallpapersRootFolderName,
+      });
+      for (const fileName in quotes) {
+        await wallpaperGenerator.generate(fileName, quotes[fileName]);
+      }
+    } finally {
+      await browser.close();
+    }
+
+    const wallpaperZipper = new WallpaperZipper({
+      screenHeight: screenResolution.screenHeight,
+      screenWidth: screenResolution.screenWidth,
+      wallpapersRootFolderName: wallpapersRootFolderName,
+    });
+    wallpaperZipper.compress();
+  }
 };
 
 main();

@@ -1,3 +1,4 @@
+import { promises as fs } from "fs";
 import path from "path";
 import { Browser, Page } from "puppeteer";
 import { Quote } from "./Quote";
@@ -8,7 +9,7 @@ interface WallpaperGeneratorSettings {
   template: string;
   screenHeight: number;
   screenWidth: number;
-  wallpapersFolderName: string;
+  wallpapersRootFolderName: string;
 }
 
 export class WallpaperGenerator {
@@ -16,7 +17,7 @@ export class WallpaperGenerator {
     private template: string,
     private screenHeight: number,
     private screenWidth: number,
-    private wallpapersFolderName: string
+    private wallpapersRootFolderName: string
   ) {}
 
   public static async createInstance(
@@ -26,7 +27,7 @@ export class WallpaperGenerator {
       settings.template,
       settings.screenHeight,
       settings.screenWidth,
-      settings.wallpapersFolderName
+      settings.wallpapersRootFolderName
     );
     instance.page = await instance.getBrowserPage(settings.browser);
     return instance;
@@ -35,11 +36,17 @@ export class WallpaperGenerator {
   private page!: Page;
 
   public async generate(fileName: string, quoteData: QuoteData) {
+    console.log(
+      `Generating ${this.screenWidth}x${this.screenHeight}/${fileName}.png...`
+    );
+
     const quote = new Quote(quoteData);
     const html = await this.getHtml(quote);
-    await this.page.setContent(html);
-    const screenshotFilePath = WallpaperGenerator.getScreenshotFilePath(
-      this.wallpapersFolderName,
+    await this.page.setContent(html, { waitUntil: "networkidle0" });
+    const wallpaperFolderName = this.getWallpaperFolderName();
+    await fs.mkdir(wallpaperFolderName, { recursive: true });
+    const screenshotFilePath = this.getScreenshotFilePath(
+      wallpaperFolderName,
       fileName
     );
     await this.page.screenshot({ path: screenshotFilePath });
@@ -63,14 +70,22 @@ export class WallpaperGenerator {
     return html;
   }
 
-  private static getScreenshotFilePath(
-    wallpapersFolderName: string,
+  private getWallpaperFolderName(): string {
+    const wallpaperFolderName = path.join(
+      __dirname,
+      "..",
+      this.wallpapersRootFolderName,
+      `${this.screenWidth}x${this.screenHeight}`
+    );
+    return wallpaperFolderName;
+  }
+
+  private getScreenshotFilePath(
+    wallpaperFolderName: string,
     fileName: string
   ): string {
     const screenshotFilePath = path.join(
-      __dirname,
-      "..",
-      wallpapersFolderName,
+      wallpaperFolderName,
       `${fileName}.png`
     );
     return screenshotFilePath;
