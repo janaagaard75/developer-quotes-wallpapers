@@ -53,8 +53,7 @@ const generateWallpaper = async (screenResolution: ScreenResolution) => {
 
 const compressWallpapers = (screenResolution: ScreenResolution) => {
   const wallpaperZipper = new WallpaperZipper({
-    screenHeight: screenResolution.height,
-    screenWidth: screenResolution.width,
+    screenResolution: screenResolution,
     wallpapersRootFolderName: wallpapersRootFolderName,
   });
   wallpaperZipper.compress();
