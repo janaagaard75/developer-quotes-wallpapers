@@ -26,31 +26,38 @@ const main = async () => {
   await fs.rmdir(wallpapersRootFolderName, { recursive: true });
 
   for (let screenResolution of screenResolutions) {
-    const browser = await puppeteer.launch({ headless: true });
-    try {
-      const template = await fs.readFile("src/template.html", {
-        encoding: "utf-8",
-      });
-      const wallpaperGenerator = await WallpaperGenerator.createInstance({
-        browser: browser,
-        template: template,
-        screenResolution: screenResolution,
-        wallpapersRootFolderName: wallpapersRootFolderName,
-      });
-      for (const fileName in quotes) {
-        await wallpaperGenerator.generate(fileName, quotes[fileName]);
-      }
-    } finally {
-      await browser.close();
-    }
+    await generateWallpaper(screenResolution);
+    compressWallpapers(screenResolution);
+  }
+};
 
-    const wallpaperZipper = new WallpaperZipper({
-      screenHeight: screenResolution.height,
-      screenWidth: screenResolution.width,
+const generateWallpaper = async (screenResolution: ScreenResolution) => {
+  const browser = await puppeteer.launch({ headless: true });
+  try {
+    const template = await fs.readFile("src/template.html", {
+      encoding: "utf-8",
+    });
+    const wallpaperGenerator = await WallpaperGenerator.createInstance({
+      browser: browser,
+      template: template,
+      screenResolution: screenResolution,
       wallpapersRootFolderName: wallpapersRootFolderName,
     });
-    wallpaperZipper.compress();
+    for (const fileName in quotes) {
+      await wallpaperGenerator.generate(fileName, quotes[fileName]);
+    }
+  } finally {
+    await browser.close();
   }
+};
+
+const compressWallpapers = (screenResolution: ScreenResolution) => {
+  const wallpaperZipper = new WallpaperZipper({
+    screenHeight: screenResolution.height,
+    screenWidth: screenResolution.width,
+    wallpapersRootFolderName: wallpapersRootFolderName,
+  });
+  wallpaperZipper.compress();
 };
 
 main();
