@@ -3,20 +3,19 @@ import path from "path";
 import { Browser, Page } from "puppeteer";
 import { Quote } from "./Quote";
 import { QuoteData } from "./QuoteData";
+import { ScreenResolution } from "./ScreenResolution";
 
 interface WallpaperGeneratorSettings {
   browser: Browser;
   template: string;
-  screenHeight: number;
-  screenWidth: number;
+  screenResolution: ScreenResolution;
   wallpapersRootFolderName: string;
 }
 
 export class WallpaperGenerator {
   private constructor(
     private template: string,
-    private screenHeight: number,
-    private screenWidth: number,
+    private screenResolution: ScreenResolution,
     private wallpapersRootFolderName: string
   ) {}
 
@@ -25,8 +24,7 @@ export class WallpaperGenerator {
   ): Promise<WallpaperGenerator> {
     const instance = new WallpaperGenerator(
       settings.template,
-      settings.screenHeight,
-      settings.screenWidth,
+      settings.screenResolution,
       settings.wallpapersRootFolderName
     );
     instance.page = await instance.getBrowserPage(settings.browser);
@@ -37,7 +35,7 @@ export class WallpaperGenerator {
 
   public async generate(fileName: string, quoteData: QuoteData) {
     console.log(
-      `Generating ${this.screenWidth}x${this.screenHeight}/${fileName}.png...`
+      `Generating ${this.screenResolution.screenWidth}x${this.screenResolution.screenHeight}/${fileName}.png...`
     );
 
     const quote = new Quote(quoteData);
@@ -56,8 +54,8 @@ export class WallpaperGenerator {
     const page = await browser.newPage();
     await page.setViewport({
       deviceScaleFactor: 1,
-      height: this.screenHeight,
-      width: this.screenWidth,
+      height: this.screenResolution.screenHeight,
+      width: this.screenResolution.screenWidth,
     });
     return page;
   }
@@ -75,7 +73,7 @@ export class WallpaperGenerator {
       __dirname,
       "..",
       this.wallpapersRootFolderName,
-      `${this.screenWidth}x${this.screenHeight}`
+      `${this.screenResolution.screenWidth}x${this.screenResolution.screenHeight}`
     );
     return wallpaperFolderName;
   }

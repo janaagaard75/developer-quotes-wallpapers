@@ -1,26 +1,26 @@
 import { promises as fs } from "fs";
 import puppeteer from "puppeteer";
 import { quotes } from "./quotes";
+import { ScreenResolution } from "./ScreenResolution";
 import { WallpaperGenerator } from "./WallpaperGenerator";
 import { WallpaperZipper } from "./WallpaperZipper";
 
 const wallpapersRootFolderName = "wallpapers";
 
-const screenResolutions: Array<{ screenHeight: number; screenWidth: number }> =
-  [
-    {
-      screenHeight: 1440,
-      screenWidth: 2560,
-    },
-    {
-      screenHeight: 2160,
-      screenWidth: 3840,
-    },
-    {
-      screenWidth: 3440,
-      screenHeight: 1440,
-    },
-  ];
+const screenResolutions: Array<ScreenResolution> = [
+  {
+    screenHeight: 1440,
+    screenWidth: 2560,
+  },
+  {
+    screenHeight: 2160,
+    screenWidth: 3840,
+  },
+  {
+    screenWidth: 3440,
+    screenHeight: 1440,
+  },
+];
 
 const main = async () => {
   await fs.rmdir(wallpapersRootFolderName, { recursive: true });
@@ -34,8 +34,7 @@ const main = async () => {
       const wallpaperGenerator = await WallpaperGenerator.createInstance({
         browser: browser,
         template: template,
-        screenHeight: screenResolution.screenHeight,
-        screenWidth: screenResolution.screenWidth,
+        screenResolution: screenResolution,
         wallpapersRootFolderName: wallpapersRootFolderName,
       });
       for (const fileName in quotes) {
