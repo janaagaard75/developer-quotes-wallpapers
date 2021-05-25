@@ -35,7 +35,7 @@ export class WallpaperGenerator {
 
   public async generate(fileName: string, quoteData: QuoteData) {
     console.log(
-      `Generating ${this.screenResolution.screenWidth}x${this.screenResolution.screenHeight}/${fileName}.png...`
+      `Generating ${this.screenResolution.width}x${this.screenResolution.height}/${fileName}.png...`
     );
 
     const quote = new Quote(quoteData);
@@ -54,8 +54,8 @@ export class WallpaperGenerator {
     const page = await browser.newPage();
     await page.setViewport({
       deviceScaleFactor: 1,
-      height: this.screenResolution.screenHeight,
-      width: this.screenResolution.screenWidth,
+      height: this.screenResolution.height,
+      width: this.screenResolution.width,
     });
     return page;
   }
@@ -73,7 +73,7 @@ export class WallpaperGenerator {
       __dirname,
       "..",
       this.wallpapersRootFolderName,
-      `${this.screenResolution.screenWidth}x${this.screenResolution.screenHeight}`
+      `${this.screenResolution.width}x${this.screenResolution.height}`
     );
     return wallpaperFolderName;
   }

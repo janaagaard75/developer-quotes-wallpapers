@@ -9,16 +9,16 @@ const wallpapersRootFolderName = "wallpapers";
 
 const screenResolutions: Array<ScreenResolution> = [
   {
-    screenHeight: 1440,
-    screenWidth: 2560,
+    height: 1440,
+    width: 2560,
   },
   {
-    screenHeight: 2160,
-    screenWidth: 3840,
+    height: 2160,
+    width: 3840,
   },
   {
-    screenWidth: 3440,
-    screenHeight: 1440,
+    width: 3440,
+    height: 1440,
   },
 ];
 
@@ -45,8 +45,8 @@ const main = async () => {
     }
 
     const wallpaperZipper = new WallpaperZipper({
-      screenHeight: screenResolution.screenHeight,
-      screenWidth: screenResolution.screenWidth,
+      screenHeight: screenResolution.height,
+      screenWidth: screenResolution.width,
       wallpapersRootFolderName: wallpapersRootFolderName,
     });
     wallpaperZipper.compress();
