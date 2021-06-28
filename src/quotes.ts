@@ -87,6 +87,10 @@ export const quotes: { [fileName: string]: QuoteData } = {
     text: "One bad programmer can easily create two new jobs a year.",
     author: "David Parnas",
   },
+  "parse-dont-validate": {
+    text: "Parse, Don’t validate",
+    author: "Alexis King",
+  },
   "premature-optimization": {
     text: "Premature optimization is the root of all evil.",
     author: "Donald Knuth",
