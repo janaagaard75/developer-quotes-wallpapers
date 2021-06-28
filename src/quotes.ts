@@ -6,11 +6,11 @@ export const quotes: { [fileName: string]: QuoteData } = {
     author: "Martin Fowler",
   },
   "beautiful-solution": {
-    text: "When I'm working on a problem, I never think about beauty. I think only how to solve the problem. But when I have finished, if the solution is not beautiful, I know it is wrong.",
+    text: "When I’m working on a problem, I never think about beauty. I think only how to solve the problem. But when I have finished, if the solution is not beautiful, I know it is wrong.",
     author: "Freeman Dyson",
   },
   "brooks-law": {
-    title: "Brooks's law",
+    title: "Brooks’s law",
     text: "Adding manpower to a late software project makes it later.",
     author: "Fred Brooks",
   },
@@ -19,7 +19,7 @@ export const quotes: { [fileName: string]: QuoteData } = {
     author: "Uncle Bob Martin",
   },
   "conways-law": {
-    title: "Conway's Law",
+    title: "Conway’s Law",
     text: "Organizations which design systems are constrained to produce designs which are copies of the communication structures of these organizations.",
     author: "Melvin Conway",
   },
@@ -32,16 +32,16 @@ export const quotes: { [fileName: string]: QuoteData } = {
     author: "Sandi Metz",
   },
   "everybody-loves-hates-prettier": {
-    text: "Nobody loves what Prettier does to their syntax. Everyone loves what Prettier does to their coworkers' syntax.",
+    text: "Nobody loves what Prettier does to their syntax. Everyone loves what Prettier does to their coworkers’ syntax.",
     author: "u/grensley",
   },
   "harder-to-read-than-write": {
-    text: "It's harder to read code than to write it.",
+    text: "It’s harder to read code than to write it.",
     author: "Joel Spolsky",
   },
   "hofstadters-law": {
-    title: "Hofstadter's Law",
-    text: "It always takes longer than you expect, even when you take into account Hofstadter's Law.",
+    title: "Hofstadter’s Law",
+    text: "It always takes longer than you expect, even when you take into account Hofstadter’s Law.",
     author: "Douglas Hofstadter",
   },
   "late-one-day-at-a-time": {
@@ -49,13 +49,13 @@ export const quotes: { [fileName: string]: QuoteData } = {
     author: "Fred Brooks",
   },
   "hyrums-law": {
-    title: "Hyrum's law",
+    title: "Hyrum’s law",
     text: "With a sufficient number of users of an API, it does not matter what you promise in the contract: all observable behaviors of your system will be depended on by somebody.",
     author: "Hyrum Wright",
     url: "https://www.hyrumslaw.com/",
   },
   "linus-law": {
-    title: "Linus' law",
+    title: "Linus’ law",
     text: "Given enough eyeballs, all bugs are shallow.",
     author: "Linus Torvalds",
   },
@@ -87,6 +87,10 @@ export const quotes: { [fileName: string]: QuoteData } = {
     text: "One bad programmer can easily create two new jobs a year.",
     author: "David Parnas",
   },
+  "parse-dont-validate": {
+    text: "Parse, Don’t validate",
+    author: "Alexis King",
+  },
   "premature-optimization": {
     text: "Premature optimization is the root of all evil.",
     author: "Donald Knuth",
@@ -96,7 +100,7 @@ export const quotes: { [fileName: string]: QuoteData } = {
     author: "Michael Sinz",
   },
   "real-programmers-dont-comment": {
-    text: "Real programmers don't comment their code. If it was hard to write it should be hard to read",
+    text: "Real programmers don’t comment their code. If it was hard to write it should be hard to read",
     author: "?",
   },
   "rewrite-bad-code": {
@@ -148,7 +152,7 @@ export const quotes: { [fileName: string]: QuoteData } = {
     author: "Thom Holwerda",
   },
   "yagni": {
-    title: "YAGNI (You Ain't Gonna Need It)",
+    title: "YAGNI (You Ain’t Gonna Need It)",
     text: "Always implement things when you actually need them, never when you just foresee that you need them.",
     author: "Ron Jeffries",
   },
