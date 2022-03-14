@@ -35,6 +35,10 @@ export const quotes: { [fileName: string]: QuoteData } = {
     text: "Nobody loves what Prettier does to their syntax. Everyone loves what Prettier does to their coworkers’ syntax.",
     author: "u/grensley",
   },
+  "express-clearly-in-comments": {
+    text: "A common fallacy is to assume that authors of incomprehensible code will somehow be able to express themselves lucidly and clearly in comments.",
+    author: "Kevlin Henney",
+  },
   "harder-to-read-than-write": {
     text: "It’s harder to read code than to write it.",
     author: "Joel Spolsky",
