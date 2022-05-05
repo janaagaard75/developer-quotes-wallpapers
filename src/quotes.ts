@@ -52,11 +52,20 @@ export const quotes: { [fileName: string]: QuoteData } = {
     text: "How does a project get to be a year late?&hellip; One day at a time.",
     author: "Fred Brooks",
   },
+  "hanlons-razor": {
+    title: "Hanlon's Razor",
+    text: "never attribute to malice that which is adequately explained by stupidity.",
+    author: "Robert J. Hanlon",
+  },
   "hyrums-law": {
     title: "Hyrum’s law",
     text: "With a sufficient number of users of an API, it does not matter what you promise in the contract: all observable behaviors of your system will be depended on by somebody.",
     author: "Hyrum Wright",
     url: "https://www.hyrumslaw.com/",
+  },
+  "integrating-poorly-documented-apis": {
+    text: "90% of the software engineering being done today is integrating poorly documented API A with poorly documented API B.",
+    author: "Austen Allred",
   },
   "linus-law": {
     title: "Linus’ law",
