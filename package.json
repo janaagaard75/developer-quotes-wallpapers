@@ -15,11 +15,11 @@
     "update-packages": "yarn upgrade && npx syncyarnlock --keepPrefix --save && yarn install"
   },
   "dependencies": {
-    "@types/adm-zip": "^0.4.34",
+    "@types/adm-zip": "^0.5.0",
     "adm-zip": "^0.5.9",
     "prettier": "^2.6.2",
-    "puppeteer": "^10.4.0",
+    "puppeteer": "^13.7.0",
     "ts-node": "^10.7.0",
-    "typescript": "^4.6.3"
+    "typescript": "^4.6.4"
   }
 }
