@@ -58,6 +58,10 @@ export const quotes: { [fileName: string]: QuoteData } = {
     author: "Hyrum Wright",
     url: "https://www.hyrumslaw.com/",
   },
+  "integrating-poorly-documented-apis": {
+    text: "90% of the software engineering being done today is integrating poorly documented API A with poorly documented API B.",
+    author: "Austen Allred",
+  },
   "linus-law": {
     title: "Linus’ law",
     text: "Given enough eyeballs, all bugs are shallow.",
