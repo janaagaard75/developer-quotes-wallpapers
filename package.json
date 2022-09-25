@@ -12,7 +12,7 @@
   },
   "scripts": {
     "start": "yarn install && ts-node src/generate-wallpapers.ts",
-    "update-packages": "yarn upgrade && npx syncyarnlock --keepPrefix --save && yarn install"
+    "update-dependencies": "yarn upgrade && npx syncyarnlock --keepPrefix --save && yarn install"
   },
   "dependencies": {
     "@types/adm-zip": "^0.5.0",
