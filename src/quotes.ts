@@ -39,6 +39,10 @@ export const quotes: { [fileName: string]: QuoteData } = {
     text: "A common fallacy is to assume that authors of incomprehensible code will somehow be able to express themselves lucidly and clearly in comments.",
     author: "Kevlin Henney",
   },
+  "first-rule-of-usability": {
+    text: "First Rule of Usability? Don't Listen to Users",
+    author: "Jakob Nielsen",
+  },
   "harder-to-read-than-write": {
     text: "It’s harder to read code than to write it.",
     author: "Joel Spolsky",
@@ -143,6 +147,10 @@ export const quotes: { [fileName: string]: QuoteData } = {
   "suck-at-the-average": {
     text: "I suspect devs are actually decent at estimating the *median* time to complete a task. Planning is hard because they suck at the *average*.",
     author: "Erik Bernhardsson",
+  },
+  "swim-with-the-current-stand-like-a-rock": {
+    text: "In matters of style, swim with the current; in matters of principle, stand like a rock.",
+    author: "Unknown",
   },
   "the-s-in-iot": {
     text: "The S in IoT is for Security.",
