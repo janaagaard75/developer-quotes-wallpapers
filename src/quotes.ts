@@ -132,6 +132,10 @@ export const quotes: { [fileName: string]: QuoteData } = {
     text: "Singleton is just a fancy name for global.",
     author: "?",
   },
+  "short-cuts": {
+    text: "Short cuts make long delays.",
+    author: "Pippin (in The Lord of the Rings by J. R. R. Tolkien)",
+  },
   "solve-a-lot-of-problems": {
     text: "Prolific developers don’t always write a lot of code, instead they solve a lot of problems. The two things are not the same.",
     author: "John Chambers",
