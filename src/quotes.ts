@@ -105,7 +105,7 @@ export const quotes: { [fileName: string]: QuoteData } = {
     author: "David Parnas",
   },
   "parse-dont-validate": {
-    text: "Parse, Don’t validate",
+    text: "Parse, don’t validate",
     author: "Alexis King",
   },
   "premature-optimization": {
