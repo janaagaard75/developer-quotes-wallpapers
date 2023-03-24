@@ -5,6 +5,10 @@ export const quotes: { [fileName: string]: QuoteData } = {
     text: "Any fool can write code that a computer can understand. Good programmers write code that humans can understand.",
     author: "Martin Fowler",
   },
+  "bad-programmers": {
+    text: "Bad programmers worry about the code. Good programmers worry about data structures and their relationships.",
+    author: "Linus Torvalds",
+  },
   "beautiful-solution": {
     text: "When I’m working on a problem, I never think about beauty. I think only how to solve the problem. But when I have finished, if the solution is not beautiful, I know it is wrong.",
     author: "Freeman Dyson",
