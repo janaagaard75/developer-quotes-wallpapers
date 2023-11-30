@@ -19,7 +19,7 @@ export const quotes: { [fileName: string]: QuoteData } = {
     author: "Fred Brooks",
   },
   "comments-are-a-failure": {
-    text: "A comment is a failure to express yourself in code.  If you fail, then write a comment; but try not to fail.",
+    text: "A comment is a failure to express yourself in code. If you fail, then write a comment; but try not to fail.",
     author: "Uncle Bob Martin",
   },
   "conways-law": {
