@@ -16,16 +16,16 @@ export class WallpaperGenerator {
   private constructor(
     private template: string,
     private screenResolution: ScreenResolution,
-    private wallpapersRootFolderName: string
+    private wallpapersRootFolderName: string,
   ) {}
 
   public static async createInstance(
-    settings: WallpaperGeneratorSettings
+    settings: WallpaperGeneratorSettings,
   ): Promise<WallpaperGenerator> {
     const instance = new WallpaperGenerator(
       settings.template,
       settings.screenResolution,
-      settings.wallpapersRootFolderName
+      settings.wallpapersRootFolderName,
     );
     instance.page = await instance.getBrowserPage(settings.browser);
     return instance;
@@ -35,7 +35,7 @@ export class WallpaperGenerator {
 
   public async generate(fileName: string, quoteData: QuoteData) {
     console.log(
-      `Generating ${this.screenResolution.width}x${this.screenResolution.height}/${fileName}.png...`
+      `Generating ${this.screenResolution.width}x${this.screenResolution.height}/${fileName}.png...`,
     );
 
     const quote = new Quote(quoteData);
@@ -45,7 +45,7 @@ export class WallpaperGenerator {
     await fs.mkdir(wallpaperFolderName, { recursive: true });
     const screenshotFilePath = this.getScreenshotFilePath(
       wallpaperFolderName,
-      fileName
+      fileName,
     );
     await this.page.screenshot({ path: screenshotFilePath });
   }
@@ -61,9 +61,11 @@ export class WallpaperGenerator {
   }
 
   private async getHtml(quote: Quote): Promise<string> {
+    const textWithPrettyQuotes = quote.text.replace("'", "&rsquo;");
+
     let html = this.template
       .replace("{{title}}", quote.title ?? "")
-      .replace("{{text}}", quote.text)
+      .replace("{{text}}", textWithPrettyQuotes)
       .replace("{{author}}", quote.author);
     return html;
   }
@@ -73,18 +75,18 @@ export class WallpaperGenerator {
       __dirname,
       "..",
       this.wallpapersRootFolderName,
-      `${this.screenResolution.width}x${this.screenResolution.height}`
+      `${this.screenResolution.width}x${this.screenResolution.height}`,
     );
     return wallpaperFolderName;
   }
 
   private getScreenshotFilePath(
     wallpaperFolderName: string,
-    fileName: string
+    fileName: string,
   ): string {
     const screenshotFilePath = path.join(
       wallpaperFolderName,
-      `${fileName}.png`
+      `${fileName}.png`,
     );
     return screenshotFilePath;
   }

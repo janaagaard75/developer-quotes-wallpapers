@@ -39,6 +39,7 @@
     "rdquo",
     "rsquo",
     "Sandi",
+    "Schryer",
     "Sinz",
     "Spolsky",
     "Strathern",
@@ -55,5 +56,8 @@
     "source.organizeImports": true
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "editor.unicodeHighlight.allowedCharacters": {
+    // "’": true
+  }
 }

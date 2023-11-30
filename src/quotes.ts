@@ -10,20 +10,24 @@ export const quotes: { [fileName: string]: QuoteData } = {
     author: "Linus Torvalds",
   },
   "beautiful-solution": {
-    text: "When I’m working on a problem, I never think about beauty. I think only how to solve the problem. But when I have finished, if the solution is not beautiful, I know it is wrong.",
+    text: "When I'm working on a problem, I never think about beauty. I think only how to solve the problem. But when I have finished, if the solution is not beautiful, I know it is wrong.",
     author: "Freeman Dyson",
   },
   "brooks-law": {
-    title: "Brooks’s law",
+    title: "Brooks's law",
     text: "Adding manpower to a late software project makes it later.",
     author: "Fred Brooks",
   },
+  "comment-and-code-disagree": {
+    text: "If the comment and code disagree, both are probably wrong.",
+    author: "Norm Schryer",
+  },
   "comments-are-a-failure": {
-    text: "A comment is a failure to express yourself in code.  If you fail, then write a comment; but try not to fail.",
+    text: "A comment is a failure to express yourself in code. If you fail, then write a comment; but try not to fail.",
     author: "Uncle Bob Martin",
   },
   "conways-law": {
-    title: "Conway’s Law",
+    title: "Conway's Law",
     text: "Organizations which design systems are constrained to produce designs which are copies of the communication structures of these organizations.",
     author: "Melvin Conway",
   },
@@ -35,8 +39,12 @@ export const quotes: { [fileName: string]: QuoteData } = {
     text: "Duplication is far cheaper than the wrong abstraction.",
     author: "Sandi Metz",
   },
+  "too-clever": {
+    text: "Don't be (too) clever.",
+    author: "Bjarne Stroustrup",
+  },
   "everybody-loves-hates-prettier": {
-    text: "Nobody loves what Prettier does to their syntax. Everyone loves what Prettier does to their coworkers’ syntax.",
+    text: "Nobody loves what Prettier does to their syntax. Everyone loves what Prettier does to their coworkers' syntax.",
     author: "u/grensley",
   },
   "express-clearly-in-comments": {
@@ -48,12 +56,12 @@ export const quotes: { [fileName: string]: QuoteData } = {
     author: "Jakob Nielsen",
   },
   "harder-to-read-than-write": {
-    text: "It’s harder to read code than to write it.",
+    text: "It's harder to read code than to write it.",
     author: "Joel Spolsky",
   },
   "hofstadters-law": {
-    title: "Hofstadter’s Law",
-    text: "It always takes longer than you expect, even when you take into account Hofstadter’s Law.",
+    title: "Hofstadter's Law",
+    text: "It always takes longer than you expect, even when you take into account Hofstadter's Law.",
     author: "Douglas Hofstadter",
   },
   "late-one-day-at-a-time": {
@@ -66,7 +74,7 @@ export const quotes: { [fileName: string]: QuoteData } = {
     author: "Robert J. Hanlon",
   },
   "hyrums-law": {
-    title: "Hyrum’s law",
+    title: "Hyrum's law",
     text: "With a sufficient number of users of an API, it does not matter what you promise in the contract: all observable behaviors of your system will be depended on by somebody.",
     author: "Hyrum Wright",
     url: "https://www.hyrumslaw.com/",
@@ -76,7 +84,7 @@ export const quotes: { [fileName: string]: QuoteData } = {
     author: "Austen Allred",
   },
   "linus-law": {
-    title: "Linus’ law",
+    title: "Linus' law",
     text: "Given enough eyeballs, all bugs are shallow.",
     author: "Linus Torvalds",
   },
@@ -109,7 +117,7 @@ export const quotes: { [fileName: string]: QuoteData } = {
     author: "David Parnas",
   },
   "parse-dont-validate": {
-    text: "Parse, don’t validate",
+    text: "Parse, don't validate",
     author: "Alexis King",
   },
   "premature-optimization": {
@@ -121,15 +129,15 @@ export const quotes: { [fileName: string]: QuoteData } = {
     author: "Michael Sinz",
   },
   "real-programmers-dont-comment": {
-    text: "Real programmers don’t comment their code. If it was hard to write it should be hard to read",
+    text: "Real programmers don't comment their code. If it was hard to write it should be hard to read",
     author: "?",
   },
   "rewrite-bad-code": {
-    text: "Don’t comment bad code&mdash;rewrite it.",
+    text: "Don't comment bad code&mdash;rewrite it.",
     author: "Brian W. Kernighan",
   },
   "should-be-able-to-read-code": {
-    text: "It’s OK to figure out murder mysteries, but you shouldn’t need to figure out code. You should be able to read it.",
+    text: "It's OK to figure out murder mysteries, but you shouldn't need to figure out code. You should be able to read it.",
     author: "Steve McConnell",
   },
   "singleton-is-just-global": {
@@ -140,8 +148,12 @@ export const quotes: { [fileName: string]: QuoteData } = {
     text: "Short cuts make long delays.",
     author: "Pippin (in The Lord of the Rings by J. R. R. Tolkien)",
   },
+  "simplify": {
+    text: "<s>Simplify</s> <s>Simplify</s> Simplify",
+    author: "?",
+  },
   "solve-a-lot-of-problems": {
-    text: "Prolific developers don’t always write a lot of code, instead they solve a lot of problems. The two things are not the same.",
+    text: "Prolific developers don't always write a lot of code, instead they solve a lot of problems. The two things are not the same.",
     author: "John Chambers",
   },
   "start-sooner": {
@@ -149,7 +161,7 @@ export const quotes: { [fileName: string]: QuoteData } = {
     author: "Jim Highsmith",
   },
   "stay-in-bed-on-monday": {
-    text: "Sometimes it pays to stay in bed on Monday, rather than spending the rest of the week debugging Monday’s code.",
+    text: "Sometimes it pays to stay in bed on Monday, rather than spending the rest of the week debugging Monday's code.",
     author: "Christopher Thompson",
   },
   "suck-at-the-average": {
@@ -163,6 +175,10 @@ export const quotes: { [fileName: string]: QuoteData } = {
   "the-s-in-iot": {
     text: "The S in IoT is for Security.",
     author: "Todd Weaver",
+  },
+  "two-kinds-of-languages": {
+    text: "There are only two kinds of languages: the ones people complain about and the ones nobody uses.",
+    author: "Bjarne Stroustrup",
   },
   "user-exploitation": {
     text: "UX is now &lsquo;user exploitation&rsquo;.",
@@ -181,7 +197,7 @@ export const quotes: { [fileName: string]: QuoteData } = {
     author: "Thom Holwerda",
   },
   "yagni": {
-    title: "YAGNI (You Ain’t Gonna Need It)",
+    title: "YAGNI (You Ain't Gonna Need It)",
     text: "Always implement things when you actually need them, never when you just foresee that you need them.",
     author: "Ron Jeffries",
   },

@@ -1,9 +1,9 @@
 import { promises as fs } from "fs";
 import puppeteer from "puppeteer";
-import { quotes } from "./quotes";
 import { ScreenResolution } from "./ScreenResolution";
 import { WallpaperGenerator } from "./WallpaperGenerator";
 import { WallpaperZipper } from "./WallpaperZipper";
+import { quotes } from "./quotes";
 
 const wallpapersRootFolderName = "wallpapers";
 
@@ -32,7 +32,7 @@ const main = async () => {
 };
 
 const generateWallpaper = async (screenResolution: ScreenResolution) => {
-  const browser = await puppeteer.launch({ headless: true });
+  const browser = await puppeteer.launch({ headless: "new" });
   try {
     const template = await fs.readFile("src/template.html", {
       encoding: "utf-8",
