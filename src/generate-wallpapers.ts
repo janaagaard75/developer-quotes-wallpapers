@@ -32,7 +32,7 @@ const main = async () => {
 };
 
 const generateWallpaper = async (screenResolution: ScreenResolution) => {
-  const browser = await puppeteer.launch({ headless: true });
+  const browser = await puppeteer.launch({ headless: "new" });
   try {
     const template = await fs.readFile("src/template.html", {
       encoding: "utf-8",
