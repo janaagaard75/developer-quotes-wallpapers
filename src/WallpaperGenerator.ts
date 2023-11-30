@@ -61,9 +61,11 @@ export class WallpaperGenerator {
   }
 
   private async getHtml(quote: Quote): Promise<string> {
+    const textWithPrettyQuotes = quote.text.replace("'", "&rsquo;");
+
     let html = this.template
       .replace("{{title}}", quote.title ?? "")
-      .replace("{{text}}", quote.text)
+      .replace("{{text}}", textWithPrettyQuotes)
       .replace("{{author}}", quote.author);
     return html;
   }
