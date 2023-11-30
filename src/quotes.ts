@@ -18,6 +18,10 @@ export const quotes: { [fileName: string]: QuoteData } = {
     text: "Adding manpower to a late software project makes it later.",
     author: "Fred Brooks",
   },
+  "comment-and-code-disagree": {
+    text: "If the comment and code disagree, both are probably wrong.",
+    author: "Norm Schryer",
+  },
   "comments-are-a-failure": {
     text: "A comment is a failure to express yourself in code. If you fail, then write a comment; but try not to fail.",
     author: "Uncle Bob Martin",
@@ -34,6 +38,10 @@ export const quotes: { [fileName: string]: QuoteData } = {
   "duplication-is-cheaper": {
     text: "Duplication is far cheaper than the wrong abstraction.",
     author: "Sandi Metz",
+  },
+  "too-clever": {
+    text: "Don't be (too) clever.",
+    author: "Bjarne Stroustrup",
   },
   "everybody-loves-hates-prettier": {
     text: "Nobody loves what Prettier does to their syntax. Everyone loves what Prettier does to their coworkers' syntax.",
@@ -140,6 +148,10 @@ export const quotes: { [fileName: string]: QuoteData } = {
     text: "Short cuts make long delays.",
     author: "Pippin (in The Lord of the Rings by J. R. R. Tolkien)",
   },
+  "simplify": {
+    text: "<s>Simplify</s> <s>Simplify</s> Simplify",
+    author: "?",
+  },
   "solve-a-lot-of-problems": {
     text: "Prolific developers don't always write a lot of code, instead they solve a lot of problems. The two things are not the same.",
     author: "John Chambers",
@@ -163,6 +175,10 @@ export const quotes: { [fileName: string]: QuoteData } = {
   "the-s-in-iot": {
     text: "The S in IoT is for Security.",
     author: "Todd Weaver",
+  },
+  "two-kinds-of-languages": {
+    text: "There are only two kinds of languages: the ones people complain about and the ones nobody uses.",
+    author: "Bjarne Stroustrup",
   },
   "user-exploitation": {
     text: "UX is now &lsquo;user exploitation&rsquo;.",
