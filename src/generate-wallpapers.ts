@@ -1,9 +1,9 @@
 import { promises as fs } from "fs";
 import puppeteer from "puppeteer";
-import { quotes } from "./quotes";
 import { ScreenResolution } from "./ScreenResolution";
 import { WallpaperGenerator } from "./WallpaperGenerator";
 import { WallpaperZipper } from "./WallpaperZipper";
+import { quotes } from "./quotes";
 
 const wallpapersRootFolderName = "wallpapers";
 
