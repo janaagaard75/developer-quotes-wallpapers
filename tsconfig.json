@@ -2,7 +2,9 @@
   "compilerOptions": {
     "esModuleInterop": true,
     "moduleResolution": "node",
+    "noEmit": true,
     "strict": true,
     "target": "ES2019"
-  }
+  },
+  "include": ["./src/**/*.ts"]
 }

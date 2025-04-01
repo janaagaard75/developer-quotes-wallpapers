@@ -8,18 +8,9 @@ import { quotes } from "./quotes";
 const wallpapersRootFolderName = "wallpapers";
 
 const screenResolutions: Array<ScreenResolution> = [
-  {
-    height: 1440,
-    width: 2560,
-  },
-  {
-    height: 2160,
-    width: 3840,
-  },
-  {
-    width: 3440,
-    height: 1440,
-  },
+  { height: 1440, width: 2560 },
+  { height: 2160, width: 3840 },
+  { width: 3440, height: 1440 },
 ];
 
 const main = async () => {
@@ -32,7 +23,7 @@ const main = async () => {
 };
 
 const generateWallpaper = async (screenResolution: ScreenResolution) => {
-  const browser = await puppeteer.launch({ headless: "new" });
+  const browser = await puppeteer.launch({ headless: "shell" });
   try {
     const template = await fs.readFile("src/template.html", {
       encoding: "utf-8",
