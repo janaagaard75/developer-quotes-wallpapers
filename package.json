@@ -11,6 +11,7 @@
     "yarn": ">=1.22"
   },
   "scripts": {
+    "check-types": "tsc",
     "start": "yarn install && ts-node src/generate-wallpapers.ts",
     "update-dependencies": "yarn upgrade-interactive && rm yarn.lock && yarn install"
   },
