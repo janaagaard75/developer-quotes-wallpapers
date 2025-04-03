@@ -184,6 +184,10 @@ export const quotes: { [fileName: string]: QuoteData } = {
     text: "UX is now &lsquo;user exploitation&rsquo;.",
     author: "Mark Hurst",
   },
+  "vibe-coding": {
+    text: 'There\'s a new kind of coding I call "vibe coding", where you fully give in to the vibes, embrace exponentials, and forget that the code even exists.',
+    author: "Andrej Karpath",
+  },
   "violent-psychopath": {
     text: "Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live.",
     author: "John F. Woods",
