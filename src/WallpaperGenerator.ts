@@ -1,5 +1,6 @@
 import { promises as fs } from "fs";
 import path from "path";
+import PngQuant from "pngquant";
 import { Browser, Page } from "puppeteer";
 import { Quote } from "./Quote";
 import { QuoteData } from "./QuoteData";
@@ -48,6 +49,10 @@ export class WallpaperGenerator {
       fileName,
     );
     await this.page.screenshot({ path: screenshotFullName });
+  }
+
+  private async optimizePng(fullFileName: string) {
+    const x = await new PngQuant(["192", "--quality", "60-80", "--nofs", "-"]);
   }
 
   private async getBrowserPage(browser: Browser): Promise<Page> {
