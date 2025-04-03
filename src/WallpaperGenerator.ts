@@ -43,11 +43,11 @@ export class WallpaperGenerator {
     await this.page.setContent(html, { waitUntil: "networkidle0" });
     const wallpaperFolderName = this.getWallpaperFolderName();
     await fs.mkdir(wallpaperFolderName, { recursive: true });
-    const screenshotFilePath = this.getScreenshotFilePath(
+    const screenshotFullName = this.getScreenshotFullName(
       wallpaperFolderName,
       fileName,
     );
-    await this.page.screenshot({ path: screenshotFilePath });
+    await this.page.screenshot({ path: screenshotFullName });
   }
 
   private async getBrowserPage(browser: Browser): Promise<Page> {
@@ -80,7 +80,7 @@ export class WallpaperGenerator {
     return wallpaperFolderName;
   }
 
-  private getScreenshotFilePath(
+  private getScreenshotFullName(
     wallpaperFolderName: string,
     fileName: string,
   ): string {
