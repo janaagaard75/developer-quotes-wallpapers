@@ -13,41 +13,34 @@ interface WallpaperGeneratorSettings {
 }
 
 export class WallpaperGenerator {
-  private constructor(
-    private template: string,
-    private screenResolution: ScreenResolution,
-    private wallpapersRootFolderName: string,
-  ) {}
-
-  public static async createInstance(
-    settings: WallpaperGeneratorSettings,
-  ): Promise<WallpaperGenerator> {
-    const instance = new WallpaperGenerator(
-      settings.template,
-      settings.screenResolution,
-      settings.wallpapersRootFolderName,
-    );
-    instance.page = await instance.getBrowserPage(settings.browser);
-    return instance;
+  public constructor(settings: WallpaperGeneratorSettings) {
+    this.browser = settings.browser;
+    this.template = settings.template;
+    this.screenResolution = settings.screenResolution;
+    this.wallpapersRootFolderName = settings.wallpapersRootFolderName;
   }
 
-  private page!: Page;
+  private browser: Browser;
+  private template: string;
+  private screenResolution: ScreenResolution;
+  private wallpapersRootFolderName: string;
 
   public async generate(fileName: string, quoteData: QuoteData) {
     console.log(
       `Generating ${this.screenResolution.width}x${this.screenResolution.height}/${fileName}.png...`,
     );
 
+    const page = await this.getBrowserPage(this.browser);
     const quote = new Quote(quoteData);
     const html = await this.getHtml(quote);
-    await this.page.setContent(html, { waitUntil: "networkidle0" });
+    await page.setContent(html, { waitUntil: "networkidle0" });
     const wallpaperFolderName = this.getWallpaperFolderName();
     await fs.mkdir(wallpaperFolderName, { recursive: true });
     const screenshotFilePath = this.getScreenshotFilePath(
       wallpaperFolderName,
       fileName,
     );
-    await this.page.screenshot({ path: screenshotFilePath });
+    await page.screenshot({ path: screenshotFilePath });
   }
 
   private async getBrowserPage(browser: Browser): Promise<Page> {

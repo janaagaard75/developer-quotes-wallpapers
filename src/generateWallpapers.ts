@@ -23,12 +23,12 @@ const main = async () => {
 };
 
 const generateWallpaper = async (screenResolution: ScreenResolution) => {
-  const browser = await puppeteer.launch({ headless: "shell" });
+  const browser = await puppeteer.launch({ headless: true });
   try {
     const template = await fs.readFile("src/template.html", {
       encoding: "utf-8",
     });
-    const wallpaperGenerator = await WallpaperGenerator.createInstance({
+    const wallpaperGenerator = new WallpaperGenerator({
       browser: browser,
       template: template,
       screenResolution: screenResolution,

@@ -11,18 +11,19 @@
     "yarn": ">=1.22"
   },
   "scripts": {
+    "check-formatting": "prettier --check \"**/*.{css,html,js,json,md,scss,ts,tsx,yml}\"",
     "check-types": "tsc",
-    "start": "yarn install && ts-node src/generate-wallpapers.ts",
+    "start": "tsx src/generateWallpapers.ts",
     "update-dependencies": "yarn upgrade-interactive && rm yarn.lock && yarn install"
   },
   "dependencies": {
     "@types/adm-zip": "^0.5.7",
-    "@types/node": "^22.15.3",
+    "@types/node": "^24.10.13",
     "adm-zip": "^0.5.16",
-    "prettier": "^3.5.3",
-    "puppeteer": "^24.7.2",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.8.3"
+    "prettier": "^3.8.1",
+    "puppeteer": "^24.37.5",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
   },
-  "packageManager": "yarn@4.9.1"
+  "packageManager": "yarn@4.12.0"
 }
