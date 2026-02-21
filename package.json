@@ -13,7 +13,7 @@
   "scripts": {
     "check-formatting": "prettier --check \"**/*.{css,html,js,json,md,scss,ts,tsx,yml}\"",
     "check-types": "tsc",
-    "start": "yarn install && ts-node src/generate-wallpapers.ts",
+    "start": "yarn install && tsx src/generate-wallpapers.ts",
     "update-dependencies": "yarn upgrade-interactive && rm yarn.lock && yarn install"
   },
   "dependencies": {
@@ -22,7 +22,7 @@
     "adm-zip": "^0.5.16",
     "prettier": "^3.8.1",
     "puppeteer": "^24.37.5",
-    "ts-node": "^10.9.2",
+    "tsx": "^4.21.0",
     "typescript": "^5.9.3"
   },
   "packageManager": "yarn@4.12.0"
