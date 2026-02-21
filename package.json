@@ -13,7 +13,7 @@
   "scripts": {
     "check-formatting": "prettier --check \"**/*.{css,html,js,json,md,scss,ts,tsx,yml}\"",
     "check-types": "tsc",
-    "start": "tsx src/generate-wallpapers.ts",
+    "start": "tsx src/generateWallpapers.ts",
     "update-dependencies": "yarn upgrade-interactive && rm yarn.lock && yarn install"
   },
   "dependencies": {
