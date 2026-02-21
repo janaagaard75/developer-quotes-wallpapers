@@ -28,7 +28,7 @@ const generateWallpaper = async (screenResolution: ScreenResolution) => {
     const template = await fs.readFile("src/template.html", {
       encoding: "utf-8",
     });
-    const wallpaperGenerator = await WallpaperGenerator.createInstance({
+    const wallpaperGenerator = new WallpaperGenerator({
       browser: browser,
       template: template,
       screenResolution: screenResolution,
