@@ -2,7 +2,6 @@ import { promises as fs } from "fs";
 import puppeteer from "puppeteer";
 import { ScreenResolution } from "./ScreenResolution";
 import { WallpaperGenerator } from "./WallpaperGenerator";
-import { WallpaperZipper } from "./WallpaperZipper";
 import { quotes } from "./quotes";
 
 const wallpapersRootFolderName = "wallpapers";
@@ -18,7 +17,6 @@ const main = async () => {
 
   for (let screenResolution of screenResolutions) {
     await generateWallpaper(screenResolution);
-    compressWallpapers(screenResolution);
   }
 };
 
@@ -40,14 +38,6 @@ const generateWallpaper = async (screenResolution: ScreenResolution) => {
   } finally {
     await browser.close();
   }
-};
-
-const compressWallpapers = (screenResolution: ScreenResolution) => {
-  const wallpaperZipper = new WallpaperZipper({
-    screenResolution: screenResolution,
-    wallpapersRootFolderName: wallpapersRootFolderName,
-  });
-  wallpaperZipper.compress();
 };
 
 main();
