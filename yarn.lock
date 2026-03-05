@@ -260,15 +260,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/adm-zip@npm:^0.5.7":
-  version: 0.5.7
-  resolution: "@types/adm-zip@npm:0.5.7"
-  dependencies:
-    "@types/node": "npm:*"
-  checksum: 10c0/6ba62bd8f4a6e7ffdad08d951c65c4f69161c2b96cc34249dcf3c448dca85749409407b297472d5c66b711325de89012e8607b74c87d99ec23e9b7a44b6c71c6
-  languageName: node
-  linkType: hard
-
 "@types/node@npm:*":
   version: 25.3.0
   resolution: "@types/node@npm:25.3.0"
@@ -300,13 +291,6 @@ __metadata:
   version: 4.0.0
   resolution: "abbrev@npm:4.0.0"
   checksum: 10c0/b4cc16935235e80702fc90192e349e32f8ef0ed151ef506aa78c81a7c455ec18375c4125414b99f84b2e055199d66383e787675f0bcd87da7a4dbd59f9eac1d5
-  languageName: node
-  linkType: hard
-
-"adm-zip@npm:^0.5.16":
-  version: 0.5.16
-  resolution: "adm-zip@npm:0.5.16"
-  checksum: 10c0/6f10119d4570c7ba76dcf428abb8d3f69e63f92e51f700a542b43d4c0130373dd2ddfc8f85059f12d4a843703a90c3970cfd17876844b4f3f48bf042bfa6b49f
   languageName: node
   linkType: hard
 
@@ -587,9 +571,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "dev-quotes@workspace:."
   dependencies:
-    "@types/adm-zip": "npm:^0.5.7"
     "@types/node": "npm:^24.10.13"
-    adm-zip: "npm:^0.5.16"
     prettier: "npm:^3.8.1"
     puppeteer: "npm:^24.37.5"
     tsx: "npm:^4.21.0"

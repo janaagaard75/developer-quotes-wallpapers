@@ -17,9 +17,7 @@
     "update-dependencies": "yarn upgrade-interactive && rm yarn.lock && yarn install"
   },
   "dependencies": {
-    "@types/adm-zip": "^0.5.7",
     "@types/node": "^24.10.13",
-    "adm-zip": "^0.5.16",
     "prettier": "^3.8.1",
     "puppeteer": "^24.37.5",
     "tsx": "^4.21.0",
