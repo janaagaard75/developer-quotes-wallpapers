@@ -39,6 +39,10 @@ export const quotes: { [fileName: string]: QuoteData } = {
     text: "Duplication is far cheaper than the wrong abstraction.",
     author: "Sandi Metz",
   },
+  "easy-to-delete": {
+    text: "Write code that is easy to delete,<br>not easy to extend.",
+    author: "Thomas Figg (tef)",
+  },
   "too-clever": {
     text: "Don't be (too) clever.",
     author: "Bjarne Stroustrup",
