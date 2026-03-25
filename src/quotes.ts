@@ -199,10 +199,12 @@ export const quotes: { [fileName: string]: QuoteData } = {
   "walking-on-water": {
     text: "Walking on water and developing software from a specification are easy if both are frozen.",
     author: "Edward V. Berard",
+    url: "https://en.wikiquote.org/wiki/Edward_V._Berard#Essays_on_object-oriented_software_engineering_(1993)",
   },
   "wtfs-per-minute": {
     text: "The only valid measurement of code quality: WTFs/minute.",
     author: "Thom Holwerda",
+    url: "https://www.osnews.com/story/19266/wtfsm/",
   },
   "yagni": {
     title: "YAGNI (You Ain't Gonna Need It)",
