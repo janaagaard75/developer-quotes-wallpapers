@@ -5,6 +5,10 @@ export const quotes: { [fileName: string]: QuoteData } = {
     text: "Any fool can write code that a computer can understand. Good programmers write code that humans can understand.",
     author: "Martin Fowler",
   },
+  "as-smart-as-anyone": {
+    text: "Always assume you're as smart as anyone else in the room, but never assume that you know as much as they do.",
+    author: "John Ternus",
+  },
   "bad-programmers": {
     text: "Bad programmers worry about the code. Good programmers worry about data structures and their relationships.",
     author: "Linus Torvalds",
@@ -25,6 +29,12 @@ export const quotes: { [fileName: string]: QuoteData } = {
   "comments-are-a-failure": {
     text: "A comment is a failure to express yourself in code. If you fail, then write a comment; but try not to fail.",
     author: "Uncle Bob Martin",
+  },
+  "curlys-law": {
+    title: "Curly's Law",
+    text: "A variable should mean one thing, and one thing only.",
+    author: "Tim Ottinger",
+    url: "https://blog.codinghorror.com/curlys-law-do-one-thing/",
   },
   "conways-law": {
     title: "Conway's Law",
@@ -58,6 +68,11 @@ export const quotes: { [fileName: string]: QuoteData } = {
   "first-rule-of-usability": {
     text: "First Rule of Usability? Don't Listen to Users",
     author: "Jakob Nielsen",
+  },
+  "fixing-problems-that-never-happened": {
+    text: "Nobody ever gets credit for fixing problems that never happened.",
+    author: "Nelson Repenning & John Sterman",
+    url: "https://mitmgmtfaculty.mit.edu/jsterman/nobodyevergetscredit/",
   },
   "harder-to-read-than-write": {
     text: "It's harder to read code than to write it.",
@@ -100,6 +115,15 @@ export const quotes: { [fileName: string]: QuoteData } = {
     text: "Measuring programming progress by lines of code is like measuring aircraft building progress by weight.",
     author: "Bill Gates",
   },
+  "move-fast-and-break-things": {
+    text: "Move fast and break things.",
+    author: "Mark Zuckerberg",
+  },
+  "ninety-ninety-rule": {
+    title: "The ninety-ninety rule",
+    text: "The first 90 percent of the code accounts for the first 90 percent of the development time. The remaining 10 percent of the code accounts for the other 90 percent of the development time.",
+    author: "Tom Cargill",
+  },
   "measure-becomes-target": {
     text: "When a measure becomes a target, it ceases to be a good measure.",
     author: "Marilyn Strathern",
@@ -123,6 +147,11 @@ export const quotes: { [fileName: string]: QuoteData } = {
   "one-bad-programmer": {
     text: "One bad programmer can easily create two new jobs a year.",
     author: "David Parnas",
+  },
+  "parkinsons-law": {
+    title: "Parkinson's Law",
+    text: "Work expands so as to fill the time available for its completion.",
+    author: "Cyril Northcote Parkinson",
   },
   "parse-dont-validate": {
     text: "Parse, don't validate",
