@@ -33,7 +33,12 @@ export class WallpaperGenerator {
     const page = await this.getBrowserPage(this.browser);
     const quote = new Quote(quoteData);
     const html = await this.getHtml(quote);
-    await page.setContent(html, { waitUntil: "networkidle0" });
+    // Puppeteer 25 dropped the "networkidle0" wait condition, so wait for the
+    // web font explicitly to keep the rendered text from falling back to serif.
+    await page.setContent(html, { waitUntil: "load" });
+    await page.evaluate(async () => {
+      await document.fonts.ready;
+    });
     const wallpaperFolderName = this.getWallpaperFolderName();
     await fs.mkdir(wallpaperFolderName, { recursive: true });
     const screenshotFilePath = this.getScreenshotFilePath(
