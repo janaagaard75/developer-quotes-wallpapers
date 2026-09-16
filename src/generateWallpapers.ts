@@ -13,7 +13,7 @@ const screenResolutions: Array<ScreenResolution> = [
 ];
 
 const main = async () => {
-  await fs.rm(wallpapersRootFolderName, { recursive: true });
+  await fs.rm(wallpapersRootFolderName, { force: true, recursive: true });
 
   for (let screenResolution of screenResolutions) {
     await generateWallpaper(screenResolution);

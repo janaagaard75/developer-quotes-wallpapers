@@ -104,6 +104,11 @@ export const quotes: { [fileName: string]: QuoteData } = {
     text: "When a measure becomes a target, it ceases to be a good measure.",
     author: "Marilyn Strathern",
   },
+  "microservice-is-a-deployment-strategy": {
+    text: "&lsquo;Microservice&rsquo; is a deployment strategy, not an architecture.",
+    author: "Allen Holub",
+    url: "https://bsky.app/profile/allenholub.bsky.social/post/3mqewkqjpby23",
+  },
   "no-obvious-deficiencies": {
     text: "There are two ways of constructing a software design: One way is to make it so simple that there are obviously no deficiencies, and the other way is to make it so complicated that there are no obvious deficiencies. The first method is far more difficult.",
     author: "Tony Hoare",
@@ -145,7 +150,7 @@ export const quotes: { [fileName: string]: QuoteData } = {
     author: "Brian W. Kernighan",
   },
   "should-be-able-to-read-code": {
-    text: "It's OK to figure out murder mysteries, but you shouldn't need to figure out code. You should be able to read it.",
+    text: "You shouldn't need to figure out code. You should be able to read it.",
     author: "Steve McConnell",
   },
   "singleton-is-just-global": {
