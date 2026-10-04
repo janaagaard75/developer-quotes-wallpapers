@@ -141,6 +141,11 @@ export const quotes: { [fileName: string]: QuoteData } = {
     text: "Programming is like sex. One mistake and you have to support it for the rest of your life.",
     author: "Michael Sinz",
   },
+  "pursuit-of-excellence": {
+    text: "The pursuit of excellence does not need justification.",
+    author: "Mitchell Hashimoto",
+    url: "https://bjornjohansen.com/pursuit-of-excellence/",
+  },
   "real-programmers-dont-comment": {
     text: "Real programmers don't comment their code. If it was hard to write it should be hard to read",
     author: "?",
