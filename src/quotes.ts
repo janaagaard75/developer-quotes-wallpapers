@@ -103,7 +103,7 @@ export const quotes: { [fileName: string]: QuoteData } = {
   "measure-becomes-target": {
     title: "Goodhart's Law",
     text: "When a measure becomes a target, it ceases to be a good measure.",
-    author: "Marilyn Strathern",
+    author: "Marilyn Strathern (paraphrasing Charles Goodhart)",
   },
   "microservice-is-a-deployment-strategy": {
     text: "&lsquo;Microservice&rsquo; is a deployment strategy, not an architecture.",
