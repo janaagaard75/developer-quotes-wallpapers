@@ -101,6 +101,7 @@ export const quotes: { [fileName: string]: QuoteData } = {
     author: "Bill Gates",
   },
   "measure-becomes-target": {
+    title: "Goodhart's Law",
     text: "When a measure becomes a target, it ceases to be a good measure.",
     author: "Marilyn Strathern",
   },
