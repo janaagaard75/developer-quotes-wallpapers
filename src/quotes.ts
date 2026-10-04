@@ -101,8 +101,9 @@ export const quotes: { [fileName: string]: QuoteData } = {
     author: "Bill Gates",
   },
   "measure-becomes-target": {
+    title: "Goodhart's Law",
     text: "When a measure becomes a target, it ceases to be a good measure.",
-    author: "Marilyn Strathern",
+    author: "Marilyn Strathern (paraphrasing Charles Goodhart)",
   },
   "microservice-is-a-deployment-strategy": {
     text: "&lsquo;Microservice&rsquo; is a deployment strategy, not an architecture.",
@@ -140,6 +141,11 @@ export const quotes: { [fileName: string]: QuoteData } = {
   "programming-is-like-sex": {
     text: "Programming is like sex. One mistake and you have to support it for the rest of your life.",
     author: "Michael Sinz",
+  },
+  "pursuit-of-excellence": {
+    text: "The pursuit of excellence does not need justification.",
+    author: "Mitchell Hashimoto",
+    url: "https://bjornjohansen.com/pursuit-of-excellence/",
   },
   "real-programmers-dont-comment": {
     text: "Real programmers don't comment their code. If it was hard to write it should be hard to read",
